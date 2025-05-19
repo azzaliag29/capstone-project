@@ -5,7 +5,8 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start-dev": "webpack serve --config webpack.dev.js",
-    "serve": "http-server dist"
+    "serve": "http-server dist",
+    "write": "npx prettier --write"
   },
   "keywords": [],
   "author": "YOUR_NAME <yourmail@mail.com>",
@@ -19,6 +20,7 @@
     "html-webpack-plugin": "^5.6.3",
     "http-server": "^14.1.1",
     "mini-css-extract-plugin": "^2.9.2",
+    "prettier": "3.5.3",
     "style-loader": "^4.0.0",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1",
