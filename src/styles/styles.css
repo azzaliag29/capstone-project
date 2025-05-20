@@ -5,6 +5,51 @@
   box-sizing: border-box;
 }
 
+:root {
+  --blue-darkest: #0d1e4a;
+  --blue-dark: #072983;
+  --blue: #0043f1;
+  --blue-light: #5785ff;
+  --blue-lightest: #bdcfff;
+
+  --purple-dark: #280887;
+  --purple: #5315fc;
+  --purple-light: #875ffe;
+  --purple-lightest: #d1c2ff;
+
+  --primary-text-color: #f9fafb;
+  --secondary-text-color: #d2d5da;
+}
+
 body {
   font-family: "Arial", sans-serif;
+}
+
+.btn {
+  background-image: linear-gradient(to right, var(--blue), var(--purple-light));
+  border: none;
+  border-radius: 999px;
+  padding: 15px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-text-color) !important;
+
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.btn:hover {
+  background-image: linear-gradient(
+    to right,
+    var(--blue-light),
+    var(--purple-lightest)
+  );
+  color: black;
+}
+
+input:focus-visible,
+.btn:focus-visible,
+a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--blue);
 }
