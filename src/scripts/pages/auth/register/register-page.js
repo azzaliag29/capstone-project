@@ -1,12 +1,12 @@
 export default class RegisterPage {
   async render() {
     return `
-      <section class="register-container">
-          <div class="register-image">
+      <section class="auth-container">
+          <div class="auth-image">
             <img src="images/register-image.png" alt="Register image">
           </div>
-          <div class="register-form-container">
-            <form id="register-form" class="register-form">
+          <div class="auth-form-container">
+            <form id="auth-form" class="auth-form">
               <div class="form-header">
                 <h1 class="form-logo">Quibly</h1>      
                 <h2 class="form-title">Register New Account</h2>
@@ -44,7 +44,7 @@ export default class RegisterPage {
                 <div class="submit-button-container">
                   <button class="btn" type="submit">Register</button>
                 </div> 
-                <p>Already have an account?<a href="#/register">Login</a></p>
+                <p>Already have an account? <a href="#/login">Login</a></p>
               </div>
             </form>
           </div>

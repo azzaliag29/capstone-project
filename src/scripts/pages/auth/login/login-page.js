@@ -1,12 +1,12 @@
 export default class LoginPage {
   async render() {
     return `
-      <section class="login-container">
-          <div class="login-image">
+      <section class="auth-container">
+          <div class="auth-image">
             <img src="images/login-image.png" alt="Login image">
           </div>
-          <div class="login-form-container">
-            <form id="login-form" class="login-form">
+          <div class="auth-form-container">
+            <form id="auth-form" class="auth-form">
               <div class="form-header">
                 <h1 class="form-logo">Quibly</h1>      
                 <h2 class="form-title">Login To Your Account</h2>
@@ -35,7 +35,7 @@ export default class LoginPage {
                 <div class="submit-button-container">
                   <button class="btn" type="submit">Login</button>
                 </div> 
-                <p>Don't have an account?<a href="#/register"> Register</a></p>
+                <p>Don't have an account? <a href="#/register">Register</a></p>
               </div>
             </form>
           </div>
