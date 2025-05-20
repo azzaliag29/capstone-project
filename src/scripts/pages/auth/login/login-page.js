@@ -35,7 +35,7 @@ export default class LoginPage {
                 <div class="submit-button-container">
                   <button class="btn" type="submit">Login</button>
                 </div> 
-                <p>Don't have an account?<a href="#/register">Register</a></p>
+                <p>Don't have an account?<a href="#/register"> Register</a></p>
               </div>
             </form>
           </div>
