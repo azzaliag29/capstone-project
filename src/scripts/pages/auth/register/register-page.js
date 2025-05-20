@@ -6,7 +6,7 @@ export default class RegisterPage {
             <img src="images/register-image.png" alt="Register image">
           </div>
           <div class="auth-form-container">
-            <form id="auth-form" class="auth-form">
+            <form id="register-form" class="auth-form">
               <div class="form-header">
                 <h1 class="form-logo">Quibly</h1>      
                 <h2 class="form-title">Register New Account</h2>

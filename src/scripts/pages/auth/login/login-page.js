@@ -6,7 +6,7 @@ export default class LoginPage {
             <img src="images/login-image.png" alt="Login image">
           </div>
           <div class="auth-form-container">
-            <form id="auth-form" class="auth-form">
+            <form id="login-form" class="auth-form">
               <div class="form-header">
                 <h1 class="form-logo">Quibly</h1>      
                 <h2 class="form-title">Login To Your Account</h2>
