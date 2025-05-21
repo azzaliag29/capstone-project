@@ -24,8 +24,8 @@ export default class LibraryPage {
               <div class="library-item__footer">
                 <p class="library-item__date">Saved at <span>May 5 2025</span></p>
                 <div class="library-item__buttons">
-                  <a href="#/library/id"><button id="open-button"><i class="fa-solid fa-chevron-right"></i></button></a>
-                  <button id="delete-button"><i class="fa-solid fa-trash"></i></button>
+                  <a href="#/library/id" class="open-button"><i class="fa-solid fa-chevron-right"></i></a>
+                  <button class="delete-button"><i class="fa-solid fa-trash"></i></button>
                 </div>
               </div>
             </div>
@@ -47,8 +47,8 @@ export default class LibraryPage {
               <div class="library-item__footer">
                 <p class="library-item__date">Saved at <span>May 5 2025</span></p>
                 <div class="library-item__buttons">
-                  <a href="#/library/id"><button id="open-button"><i class="fa-solid fa-chevron-right"></i></button></a>
-                  <button id="delete-button"><i class="fa-solid fa-trash"></i></button>
+                  <a href="#/library/id" class="open-button"><i class="fa-solid fa-chevron-right"></i></a>
+                  <button class="delete-button"><i class="fa-solid fa-trash"></i></button>
                 </div>
               </div>
             </div>
@@ -57,6 +57,8 @@ export default class LibraryPage {
 
         <div class="gradient-image"></div>
       <section>
+
+      <section class="cta-container"></section>
     `;
   }
 

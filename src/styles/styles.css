@@ -281,7 +281,7 @@ input[type="password"]::-ms-reveal {
   gap: 20px;
 }
 
-.library-item__buttons button {
+.library-item__buttons button, .library-item__buttons a {
   width: 40px;
   height: 40px;
   padding: 0;
@@ -292,23 +292,26 @@ input[type="password"]::-ms-reveal {
   transition: all 150ms ease-in-out;
 }
 
-.library-item__buttons button i {
+.library-item__buttons button i, .library-item__buttons a i {
   color: var(--primary-text-color);
 }
 
-#open-button {
+.open-button {
   background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#delete-button {
+.delete-button {
   background-color: red;
 }
 
-#open-button:hover {
+.open-button:hover {
   background-color: var(--blue-light);
 }
 
-#delete-button:hover {
+.delete-button:hover {
   background-color: #f66161;
 }
 
