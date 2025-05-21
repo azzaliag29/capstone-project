@@ -10,6 +10,18 @@
   .auth-form {
     width: 400px;
   }
+
+  .summarize-tool {
+    flex-wrap: wrap;
+  }
+
+  .summarize-tool__left-col {
+  width: 100%;
+  }
+
+  .summarize-tool__right-col {
+  width: 100%;
+  }
 }
 
 @media screen and (max-width: 800px) {
