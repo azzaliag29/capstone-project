@@ -62,3 +62,5 @@ export default class LibraryPage {
 
   async afterRender() {}
 }
+
+// Kalau data sudah bisa di fetch, hapus <div class="library-item"> dan childnya, diganti pakai generateLibraryItem()

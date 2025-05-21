@@ -49,7 +49,7 @@ body {
 }
 
 input:focus-visible,
-.btn:focus-visible,
+button:focus-visible,
 a:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px var(--blue);
@@ -328,3 +328,19 @@ input[type="password"]::-ms-reveal {
 }
 
 /* END OF LIBRARY PAGE */
+
+.library-list__error, .library-list__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.library-list__error img, .library-list__empty img {
+  width: 250px;
+}
+
+.library-list__error__desc h2, .library-list__empty__desc h2 {
+  margin-bottom: 10px;
+}
