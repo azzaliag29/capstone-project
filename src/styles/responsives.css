@@ -26,4 +26,16 @@
   .auth-form {
     width: 300px;
   }
+
+  .library-item__illustration img {
+    display: none;
+  }
+
+  .library-item {
+    gap: 0;
+  }
+
+  .library-item__buttons {
+    margin-left: auto;
+  }
 }
