@@ -38,4 +38,16 @@
   .auth-form {
     width: 300px;
   }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .faq-item__title h2 {
+    font-size: 1rem;
+  }
 }

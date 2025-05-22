@@ -87,6 +87,8 @@ export default class SummarizePage {
             </div>
           </div>
         </div>
+
+        <div class="gradient-orbs"></div>
       </section>
 
       <section class="faq-container container">
@@ -136,9 +138,11 @@ export default class SummarizePage {
             <p class="faq-item__body hidden">Yes. Your input and generated summaries are stored securely in your personal account library for future access. We prioritize user privacy and data security.</P>
           </li>
         </ul>
+
+        <div class="faq-bg"></div>
       </section>
 
-      <section class="cta-container"></section>
+      <section class="cta-container container"></section>
     `;
   }
 
