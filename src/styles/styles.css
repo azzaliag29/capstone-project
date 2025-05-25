@@ -181,3 +181,240 @@ a:focus-visible {
 input[type="password"]::-ms-reveal {
   filter: invert(100%);
 }
+
+/* ====== Container Utama untuk Halaman Contact Us ====== */
+.contactus-container {
+  min-height: 100vh;
+  background: #0A1A44; /* Warna biru gelap khas Quibly */
+  font-family: 'Inter', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;    /* Tambahkan ini supaya konten vertikal tengah! */
+  padding-top: 0;             /* Hilangkan padding atas, nggak perlu lagi */
+}
+
+/* ====== Navbar ====== */
+.cu-navbar {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 10px 20px; /* UBAH di sini! */
+  color: #fff;
+  margin-top: -20px;
+}
+
+/* Logo Quibly */
+.cu-logo {
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: .5px;
+  margin-left: 30px;
+}
+
+/* Daftar Link di Navbar */
+.cu-nav-links {
+  display: flex;
+  gap: 60px;
+  font-weight: 400;
+}
+
+/* Link individual di Navbar */
+.cu-nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: opacity .2s;
+  opacity: 0.9;
+}
+
+/* ====== Judul Halaman ====== */
+.cu-title {
+  margin: 90px 0 32px 0;
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: .5px;
+}
+
+/* ====== Wrapper Form ====== */
+.cu-form-wrapper {
+  background: #fff;
+  border-radius: 32px; /* Membulatkan sudut */
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10); /* Bayangan lembut */
+  padding: 40px 38px;
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 20px;
+}
+
+/* ====== Grup Field dalam Form ====== */
+.cu-form-group {
+  margin-bottom: 28px;
+}
+
+/* Untuk margin bottom terakhir lebih besar */
+.cu-form-group:last-of-type {
+  margin-bottom: 34px;
+}
+
+/* Label pada Form */
+.cu-form-group label {
+  display: block;
+  color: #232323;
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+  letter-spacing: .02em;
+}
+
+/* Input dan Textarea */
+.cu-form-group input,
+.cu-form-group textarea {
+  width: 100%;
+  border-radius: 32px;
+  border: 1.5px solid #d6d6d6;
+  padding: 13px 22px;
+  font-size: 1rem;
+  background: #f8f8f8;
+  outline: none;
+  margin-top: 0;
+  font-family: inherit;
+}
+
+/* Textarea lebih pendek, tidak bisa di-resize */
+.cu-form-group textarea {
+  resize: none;
+  height: 70px;
+}
+
+/* ====== Tombol Submit ====== */
+.cu-submit-btn {
+  width: 40%;
+  padding: 13px 0;
+  border: none;
+  border-radius: 32px;
+  background: linear-gradient(90deg,#2447f9 0%,#9e6af6 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: opacity .2s;
+  box-shadow: 0 2px 8px 0 rgba(120, 120, 200, .09);
+}
+
+/* Main Container for the Bottom Section */
+.cu-simple-bottom {
+  display: flex;
+  justify-content: space-between; /* Memisahkan elemen kiri dan kanan */
+  align-items: flex-start;
+  padding: 30px 40px;
+  background-color: #0A1A44;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 22px;
+  margin-top: 50px;
+}
+
+/* Left section for Quibly and Summarize text */
+.cu-simple-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-right: 780px; /* Memberikan sedikit ruang antara kiri dan kanan */
+}
+
+/* Quibly Title (Besar) */
+.quibly-title {
+  font-size: 34px;  /* Ukuran font Quibly lebih besar */
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Text "Summarize long text" di bawah Quibly */
+.cu-summary-text {
+  font-size: 1.1rem;
+  font-weight: 0px;
+  color: #ffffff;
+  margin-top: -10px;
+  margin-left: -0px;
+}
+
+/* Right Section for Menu and Social Media */
+.cu-simple-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px; /* Memberikan jarak antar item */
+  text-align: left;
+  flex-wrap: wrap;
+  margin-left: 30px; /* Memberikan ruang di kiri */
+}
+
+/* Quick Links Menu for About Us and Privacy Policy */
+.cu-simple-menu {
+  display: flex;
+  flex-direction: column; /* Stack the links vertically */
+  gap: 15px; /* Space between links */
+  text-align: left;
+  margin-bottom: 20px; /* Space at the bottom */
+  margin-left: -250px;
+}
+
+/* Support and Terms of Service */
+.cu-support-terms {
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  gap: 15px; /* Space between the links */
+  text-align: left;
+  margin-bottom: 20px; /* Space at the bottom */
+  margin-top: -100px;
+}
+
+/* Styling for the links */
+.cu-simple-menu a,
+.cu-support-terms a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600; /* Same font weight as About Us links */
+  transition: color 0.3s;
+}
+
+/* Hover effect for the links */
+.cu-simple-menu a:hover,
+.cu-support-terms a:hover {
+  color: #C3BBFF; /* Light blue hover effect */
+}
+
+/* Social Media Section */
+.cu-social-links {
+  display: flex;
+  gap: 25px; /* Space between social media icons */
+  justify-content: flex-end;
+}
+
+.cu-social-icon {
+  font-size: 30px;
+  transition: color 0.3s ease;
+  color: white;
+}
+
+.cu-social-icon:hover {
+  color: #C3BBFF;
+}
+
+/* Footer */
+footer {
+  text-align: left;
+  padding: 20px 43px;
+  background-color: #0A1A44;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+}
