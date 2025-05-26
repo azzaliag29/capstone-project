@@ -290,6 +290,7 @@ i[class="fa-solid fa-download"], i[class="fa-solid fa-copy"], i[class="fa-solid 
   height: 250px;
   font-size: 1rem;
   line-height: 1.5rem;
+  margin-bottom: 20px;
   font-family: "Arial", sans-serif;
   border: none;
   background-color: transparent;
@@ -378,7 +379,7 @@ i[class="fa-solid fa-download"], i[class="fa-solid fa-copy"], i[class="fa-solid 
   font-size: 1.1rem;
 }
 
-.faq-item__title h2, .faq-item__title i, p {
+.faq-item__title h2, .faq-item__title i, .faq-list p {
   margin-inline: 5px;
 }
 
