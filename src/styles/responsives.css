@@ -10,6 +10,18 @@
   .auth-form {
     width: 400px;
   }
+
+  .summarize-tool {
+    flex-wrap: wrap;
+  }
+
+  .summarize-tool__left-col {
+  width: 100%;
+  }
+
+  .summarize-tool__right-col {
+  width: 100%;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -26,6 +38,17 @@
   .auth-form {
     width: 300px;
   }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .faq-item__title h2 {
+    font-size: 1rem;
 
   .library-item__illustration img {
     display: none;
