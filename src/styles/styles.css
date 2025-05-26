@@ -282,34 +282,21 @@ input[type="password"]::-ms-reveal {
   box-shadow: 0 2px 8px 0 rgba(120, 120, 200, .09);
 }
 
-/* Body styling */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #0A1A44; /* Dark Blue Background */
-  width: 100%;
-  height: 100%;
-  font-family: Arial, sans-serif;
-}
-
 /* General container to wrap everything */
 .about-page {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #0A1A44; /* Dark Blue Background */
+  background-color: var(--blue-darkest); /* Dark Blue Background */
 }
 
 /* About page section container */
 .about-page .about-container {
-  background-color: #0A1A44; /* Dark Blue Background */
-  color: rgb(8, 8, 8);
   padding: 50px;
   max-width: 900px; /* Set max-width to make it not too stretched */
   width: 100%; /* Ensure it takes full available width but doesn't stretch too much */
   box-sizing: border-box;
-  border-radius: 15px; /* Rounded corners for the entire section */
   margin-top: 50px; /* Reduced spacing */
   display: flex;
   flex-direction: column;
@@ -319,10 +306,9 @@ body {
 
 /* Section styling with background */
 .about-page .about-header,
-.about-page .about-content,
-.about-page .simplify-text-container {
+.about-page .about-content {
   background-color: #bdcfff; /* Lighter Blue background for sections */
-  padding: 30px; /* Adjust padding for more space around the text */
+  padding: 40px 30px; /* Adjust padding for more space around the text */
   margin: 20px 0; /* Increased margin between sections */
   border-radius: 15px; /* Rounded corners */
   width: 100%; /* Full-width background */
@@ -331,128 +317,44 @@ body {
 
 /* Adjust padding inside the header, content, and simplify text containers */
 .about-page .about-header h1,
-.about-page .about-content h2,
-.about-page .simplify-text-container h2 {
-  padding-top: 10px; /* Adds space above the heading */
-  padding-bottom: 10px; /* Adds space below the heading */
+.about-page .about-content h2 {
+  padding-bottom: 20px; /* Adds space below the heading */
 }
 
-/* Adjust paragraph padding inside the sections */
-.about-page .about-header p,
-.about-page .about-content p,
-.about-page .simplify-text-container p {
-  padding-top: 10px; /* Adds space above the paragraph */
-  padding-bottom: 15px; /* Adds space below the paragraph */
-}
-
-
-/* Specific styles for "Let's Simplify Your Text" section */
-.about-page .simplify-text-container {
-  position: relative; /* To allow positioning of the button */
-  padding: 30px;
-  margin-top: 15px;
-  background-color: #bdcfff; /* Lighter blue background */
+/* CTA CONTAINER */
+.simplify-text-container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  background-color: #bdcfff;
+  padding: 30px; 
+  margin: 20px 0; 
+  border-radius: 15px; 
   width: 100%; 
-  max-width: 900px;
+  max-width: 900px; 
+}
+
+.simplify-text-container .simplify-text-container__left-col {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align the text to the left */
-  justify-content: flex-start; /* Align text at the top */
-  border-radius: 15px;
-  border: 3px solid #5315fc; /* Border around the section */
 }
 
-/* Adjust font size for the section title */
-.about-page .simplify-text-container h2 {
-  font-size: 2.5em; /* Adjusted font size for the section title */
-  color: #5315fc; /* Purple text color for the title */
+.simplify-text-container .simplify-text-container__left-col h3 {
+  font-size: 1.2rem;
+  padding-bottom: 10px;
 }
 
-/* Adjust font size for the paragraph */
-.about-page .simplify-text-container p {
-  font-size: 1em; /* Adjusted font size for the paragraph */
-  color: #000000; /* White text color */
-  text-align: left;
+.simplify-text-container .simplify-text-container__left-col p {
+  padding-bottom: 25px;
 }
 
-/* Border container effect on the last section */
-.about-page .border-container {
-  padding: 30px; /* Increased padding for more space */
-  border: 3px solid #5315fc;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: 80px;
-  background-color: #5315fc;
-  color: #050505;
-  font-size: 12px;
-  text-align: center;
-  max-width: 200px;  /* Increased max-width for larger container */
-  height: -100px; /* Make the height adjust based on content */
+.simplify-text-container .simplify-text-container__left-col a {
+  text-decoration: none;
+  max-width: fit-content;
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-  .about-page .about-container {
-    padding: 20px; /* Reduced padding for smaller screens */
-    margin-top: 30px; /* Adjusted margin for smaller screens */
-  }
-
-  .about-page .about-header,
-  .about-page .about-content,
-  .about-page .simplify-text-container {
-    padding: 20px; /* Adjusted padding for mobile screens */
-  }
-
- /* Styling for the image inside "Let’s Simplify Your Text" section */
-.simplify-text-container .simplify-image {
-  width: 100%; /* Makes the image responsive (scale to container width) */
-  max-width: 100px; /* Restrict the maximum width of the image */
-  height: auto; /* Maintains aspect ratio */
-  display: block; /* Makes the image behave like a block element */
-  margin-top: 20px; /* Adds space between text and image */
-  object-fit: contain; /* Ensures the image fits within its container */
-  margin-right: -100px;
-}
-
-  .about-page h1,
-  .about-page h1 {
-    font-size: 1em; /* Reduced font size for smaller screens */
-  }
-
-  .about-page .simplify-text-container button {
-    font-size: 0.9em; /* Reduced button font size */
-  }
-
-  .about-page .simplify-text-container .cta-link {
-    font-size: 10px; /* Smaller font size for mobile */
-  }
-
-/* "Try Now For Free" link styled as text but still functional */
-.about-page .simplify-text-container .cta-button {
-  display: inline-block;
-  padding: 12px 30px; /* Adds padding to make it look like a button */
-  background-color: transparent; /* No background color */
-  color: white; /* White text color */
-  font-size: 16px; /* Font size for the button */
-  text-decoration: none; /* Removes underline */
-  border: 2px solid #ffffff; /* Adds border around the button */
-  border-radius: 30px; /* Rounded corners for the button */
-  transition: color 0.3s ease, background-color 0.3s ease;
-  cursor: pointer; /* Pointer cursor for clickable action */
-  margin-top: 15px;
-  font-weight: bold; /* Bold text to make it stand out */
-  text-align: center; /* Ensure text is centered */
-}
-
-/* Remove focus style for "Try Now For Free" */
-.about-page .simplify-text-container .cta-button:focus {
-  outline: none; /* Removes the outline when clicked */
-}
-
-/* Hover effect for the "Try Now For Free" clickable text */
-.about-page .simplify-text-container .cta-button:hover {
-  color: #f1f1f1; /* Lighter color for text on hover */
-  background-color: #1e2a47; /* Dark background color on hover */
-  text-decoration: none; /* Ensure no underline on hover */
-}
+.simplify-text-container .simplify-text-container__right-col img {
+  width: 280px;
 }

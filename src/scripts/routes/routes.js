@@ -10,7 +10,7 @@ const routes = {
   '/about': new AboutPage(),
   '/login': new LoginPage(),
   '/register': new RegisterPage(),
-  '/contactus': new ContactUs(), 
+  '/contactus': new ContactUs(),
 };
 
 export default routes;

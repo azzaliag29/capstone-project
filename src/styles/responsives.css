@@ -20,6 +20,25 @@
   .auth-image img {
     display: none;
   }
+
+  .about-page .about-container {
+    padding: 20px; /* Reduced padding for smaller screens */
+  }
+
+  .about-page .about-header,
+  .about-page .about-content,
+  .about-page .simplify-text-container {
+    padding: 20px; /* Adjusted padding for mobile screens */
+  }
+
+  /* Styling for the image inside "Let’s Simplify Your Text" section */
+  .about-page .simplify-text-container .simplify-text-container__right-col img {
+    display: none;
+  }
+
+  .about-page .simplify-text-container {
+    gap: 0px;
+  }
 }
 
 @media screen and (max-width: 600px) {

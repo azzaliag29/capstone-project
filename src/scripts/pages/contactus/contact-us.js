@@ -2,9 +2,6 @@ export default class ContactUsPage {
   async render() {
     return `
       <section class="contactus-container">
-        <nav class="cu-navbar">
-        </nav>
-
         <h1 class="cu-title">Talk To Our Team</h1>
         <div class="cu-form-wrapper">
           <form id="contact-form">
@@ -25,6 +22,7 @@ export default class ContactUsPage {
             </button>
           </form>
         </div>
+      </section>
     `;
   }
 
