@@ -39,7 +39,7 @@ export default class SummaryPage {
                 </div>
 
                 <div class="summary-tool_button_right">
-                  <button id="edit-button" class="edit__button btn" type="button"><i class="fa-solid fa-pen-to-square"></i>Edit</button>
+                  <button id="edit-button" class="edit__button primary-btn" type="button"><i class="fa-solid fa-pen-to-square"></i>Edit</button>
                   <button id="delete-button" class="delete__button" type="button"><i class="fa-solid fa-trash"></i>Delete</button>
                 </div>
               </div>
@@ -52,7 +52,7 @@ export default class SummaryPage {
             <div class="simplify-text-container__left-col">
               <h3>Let’s Simplify Your Text</h3>
               <p>Quickly transform long content into clear and concise summaries. Ideal for essays, blogs, or research articles to help you focus on what matters.</p>
-              <a href="#/summary" class="btn">Try Now For Free</a>
+              <a href="#/summary" class="primary-btn">Try Now For Free</a>
             </div>
             <div class="simplify-text-container__right-col">
               <img src="images/cta-image.png" alt="Simplify Text" class="simplify-image">

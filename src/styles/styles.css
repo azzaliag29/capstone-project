@@ -26,7 +26,7 @@ body {
   background-color: var(--blue-darkest);
 }
 
-.btn {
+.primary-btn {
   background-image: linear-gradient(to right, var(--blue), var(--purple-light));
   border: none;
   border-radius: 999px;
@@ -40,7 +40,7 @@ body {
   transition: all 300ms ease-in-out;
 }
 
-.btn:hover {
+.primary-btn:hover {
   background-image: linear-gradient(
     to right,
     var(--purple-light),
@@ -51,17 +51,18 @@ body {
 
 input:focus-visible,
 textarea:focus-visible,
+select:focus-visible,
 button:focus-visible,
 a:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px var(--blue);
 }
 
-.container {
+/* .container {
   padding-inline: 20px;
   margin-inline: auto;
   max-width: 1300px;
-}
+} */
 
 .section-header {
   display: flex;
@@ -136,13 +137,13 @@ a:focus-visible {
   font-size: 1.5rem;
 }
 
-.form-control {
+.auth-form-control {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.form-control label {
+.auth-form-control label {
   font-weight: bold;
 }
 
@@ -209,12 +210,14 @@ input[type="password"]::-ms-reveal {
 /* END OF AUTH PAGE */
 
 /* START OF SUMMARIZE PAGE */
-.summarize-tool-container, .faq-container {
+.summarize-tool-container {
   width: 100%;
   margin-bottom: 100px;
 }
 
 .faq-container {
+  width: 80%;
+  margin-bottom: 100px;
   position: relative;
 }
 
@@ -244,11 +247,22 @@ input[type="password"]::-ms-reveal {
   border-radius: 999px;
 }
 
-.summarize-tool__top .language-button {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
+.language-selector label {
+  margin-right: 5px;
+}
+
+.language-selector select {
+  padding-right: 5px;
+  font-family: 1rem;
+}
+
+.language-selector__button {
+  background-color: transparent;
+  border: none;
+}
+
+.summarize-tool__right-col p {
+  margin: 0;
 }
 
 .summarize-tool__bottom {
@@ -315,7 +329,8 @@ i[class="fa-solid fa-download"], i[class="fa-solid fa-copy"], i[class="fa-solid 
 
 .keywords-button {
   flex: 0 0 auto;
-  padding: 8px 20px;
+  padding: 4px 20px;
+  font-size: 0.9rem;
   border-radius: 999px;
   background-color: transparent;
   border: 2px solid var(--blue);
@@ -348,46 +363,6 @@ i[class="fa-solid fa-download"], i[class="fa-solid fa-copy"], i[class="fa-solid 
   z-index: -1;
 }
 
-.faq-list {
-  margin: 0 auto;
-  color: var(--primary-text-color);
-  width: 90%;
-}
-
-.faq-list li {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  list-style: none;
-  cursor: pointer;
-}
-
-.faq-list li p {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.faq-item__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  height: 60px;
-  border-bottom: solid 0.5px var(--primary-text-color);
-}
-
-.faq-item__title h2 {
-  font-size: 1.1rem;
-}
-
-.faq-item__title h2, .faq-item__title i, .faq-list p {
-  margin-inline: 5px;
-}
-
-.faq-item__body.hidden {
-  display: none;
-}
-
 .faq-bg {
   position: absolute;
   top: 0;
@@ -403,7 +378,7 @@ i[class="fa-solid fa-download"], i[class="fa-solid fa-copy"], i[class="fa-solid 
   z-index: -9999;
 }
 
-/* END OF SUMMARY PAGE */
+/* END OF SUMMARIZE PAGE */
 
 /* START OF LIBRARY PAGE */
 .library-container {
@@ -551,29 +526,15 @@ i[class="fa-solid fa-download"], i[class="fa-solid fa-copy"], i[class="fa-solid 
 /* START OF CONTACT US */
 .contactus-container {
   min-height: 100vh;
-  background: #0A1A44; /* Warna biru gelap khas Quibly */
+  background: #0A1A44;
   font-family: 'Inter', Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;    /* Tambahkan ini supaya konten vertikal tengah! */
-  padding-top: 0;             /* Hilangkan padding atas, nggak perlu lagi */
+  justify-content: center;  
+  padding-top: 0;            
 }
 
-/* ====== Navbar ====== */
-.cu-navbar {
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 20px 10px 20px; /* UBAH di sini! */
-  color: #fff;
-  margin-top: -20px;
-}
-
-/* ====== Judul Halaman ====== */
 .cu-title {
   margin: 30px 0 32px 0;
   color: #fff;
@@ -582,28 +543,24 @@ i[class="fa-solid fa-download"], i[class="fa-solid fa-copy"], i[class="fa-solid 
   letter-spacing: .5px;
 }
 
-/* ====== Wrapper Form ====== */
 .cu-form-wrapper {
   background: #fff;
-  border-radius: 32px; /* Membulatkan sudut */
-  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10); /* Bayangan lembut */
+  border-radius: 32px;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10);
   padding: 40px 38px;
   width: 100%;
   max-width: 520px;
   margin-bottom: 20px;
 }
 
-/* ====== Grup Field dalam Form ====== */
 .cu-form-group {
   margin-bottom: 28px;
 }
 
-/* Untuk margin bottom terakhir lebih besar */
 .cu-form-group:last-of-type {
   margin-bottom: 34px;
 }
 
-/* Label pada Form */
 .cu-form-group label {
   display: block;
   color: #232323;
@@ -613,7 +570,6 @@ i[class="fa-solid fa-download"], i[class="fa-solid fa-copy"], i[class="fa-solid 
   letter-spacing: .02em;
 }
 
-/* Input dan Textarea */
 .cu-form-group input,
 .cu-form-group textarea {
   width: 100%;
@@ -627,13 +583,11 @@ i[class="fa-solid fa-download"], i[class="fa-solid fa-copy"], i[class="fa-solid 
   font-family: inherit;
 }
 
-/* Textarea lebih pendek, tidak bisa di-resize */
 .cu-form-group textarea {
   resize: none;
   height: 70px;
 }
 
-/* ====== Tombol Submit ====== */
 .cu-submit-btn {
   width: 40%;
   padding: 13px 0;
@@ -648,43 +602,39 @@ i[class="fa-solid fa-download"], i[class="fa-solid fa-copy"], i[class="fa-solid 
   box-shadow: 0 2px 8px 0 rgba(120, 120, 200, .09);
 }
 
-/* General container to wrap everything */
 .about-page {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--blue-darkest); /* Dark Blue Background */
+  background-color: var(--blue-darkest); 
 }
 
-/* About page section container */
 .about-page .about-container {
   padding: 50px;
-  max-width: 900px; /* Set max-width to make it not too stretched */
-  width: 100%; /* Ensure it takes full available width but doesn't stretch too much */
+  max-width: 900px;
+  width: 100%;
   box-sizing: border-box;
-  margin-top: 50px; /* Reduced spacing */
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-/* Section styling with background */
 .about-page .about-header,
 .about-page .about-content {
-  background-color: #bdcfff; /* Lighter Blue background for sections */
-  padding: 40px 30px; /* Adjust padding for more space around the text */
-  margin: 20px 0; /* Increased margin between sections */
-  border-radius: 15px; /* Rounded corners */
-  width: 100%; /* Full-width background */
-  max-width: 900px; /* Restrict width to make it look like a box */
+  background-color: #bdcfff; 
+  padding: 40px 30px; 
+  margin: 20px 0; 
+  border-radius: 15px; 
+  width: 100%; 
+  max-width: 900px; 
 }
 
-/* Adjust padding inside the header, content, and simplify text containers */
 .about-page .about-header h1,
 .about-page .about-content h2 {
-  padding-bottom: 20px; /* Adds space below the heading */
+  padding-bottom: 20px; 
 }
 
 /* END OF CONTACT US */
@@ -734,12 +684,12 @@ i[class="fa-solid fa-download"], i[class="fa-solid fa-copy"], i[class="fa-solid 
 /* START OF SUMMARY PAGE */
 
 .summary-tool-container {
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  flex-direction: column; /* Stack elements vertically */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
   max-width: 100%;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto; 
   background-color: var(--blue-darkest);
   min-height: 100vh;
 }
@@ -875,3 +825,54 @@ a.summary-btn {
 }
 
 /* END OF SUMMARY PAGE */
+
+/* BOOTSTRAP OVERRIDE */
+  .accordion-button, .accordion-body {
+    background-color: transparent !important;
+    outline: none !important;
+    color: var(--primary-text-color) !important;
+  }
+
+  .accordion-button::after {
+    filter: brightness(0) invert(1); /* Membalik warna default jadi putih */
+  }
+
+  .accordion-button:focus-visible {
+    outline: none !important;
+    box-shadow: 0 0 0 2px var(--blue);
+  }
+
+  .accordion-button {
+    font-size: 1.1rem;
+  }
+
+  .accordion-body {
+    font-size: 1rem;
+  }
+
+  .accordion-button:not(.collapsed) {
+    background-color: transparent !important;
+    color: var(--primary-text-color) !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button {
+    padding: 1.1rem;
+  }
+
+  .accordion-body {
+    padding-top: 0.2rem;
+  }
+
+  .accordion-item {
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--primary-text-color);
+    color: var(--primary-text-color);
+  }
+
+  .accordion-item:last-child {
+    border-bottom: 1px solid var(--primary-text-color);
+  }
+  
+/* BOOTSTRAP OVERRIDE */
+

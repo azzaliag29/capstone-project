@@ -13,7 +13,7 @@ export default class LoginPage {
                 <p class="form-desc">Pick up where you left off and keep learning</p>
               </div>
 
-              <div class="form-control">
+              <div class="auth-form-control">
                 <label for="email-input">Email Address</label>
 
                 <div class="form-input-container">
@@ -22,7 +22,7 @@ export default class LoginPage {
                 </div>
               </div>
 
-              <div class="form-control">
+              <div class="auth-form-control">
                 <label for="password-input">Password</label>
 
                 <div class="form-input-container">
@@ -33,7 +33,7 @@ export default class LoginPage {
 
               <div class="form-buttons">
                 <div class="submit-button-container">
-                  <button class="btn" type="submit">Login</button>
+                  <button class="primary-btn" type="submit">Login</button>
                 </div> 
                 <p>Don't have an account? <a href="#/register">Register</a></p>
               </div>

@@ -13,7 +13,7 @@ export default class RegisterPage {
                 <p class="form-desc">Get started to access your personal AI summarizer.</p>
               </div>
 
-              <div class="form-control">
+              <div class="auth-form-control">
                 <label for="name-input">Full Name</label>
 
                 <div class="form-input-container">
@@ -22,7 +22,7 @@ export default class RegisterPage {
                 </div>
               </div>
 
-              <div class="form-control">
+              <div class="auth-form-control">
                 <label for="email-input">Email Address</label>
 
                 <div class="form-input-container">
@@ -31,7 +31,7 @@ export default class RegisterPage {
                 </div>
               </div>
 
-              <div class="form-control">
+              <div class="auth-form-control">
                 <label for="password-input">Password</label>
 
                 <div class="form-input-container">
@@ -42,7 +42,7 @@ export default class RegisterPage {
 
               <div class="form-buttons">
                 <div class="submit-button-container">
-                  <button class="btn" type="submit">Register</button>
+                  <button class="primary-btn" type="submit">Register</button>
                 </div> 
                 <p>Already have an account? <a href="#/login">Login</a></p>
               </div>
