@@ -33,6 +33,7 @@ body {
   padding: 15px 20px;
   font-size: 1rem;
   font-weight: 500;
+  min-width: 100px;
   color: var(--primary-text-color) !important;
 
   cursor: pointer;
@@ -546,3 +547,331 @@ i[class="fa-solid fa-download"], i[class="fa-solid fa-copy"], i[class="fa-solid 
 }
 
  /* END OF LIBRARY PAGE */
+
+/* START OF CONTACT US */
+.contactus-container {
+  min-height: 100vh;
+  background: #0A1A44; /* Warna biru gelap khas Quibly */
+  font-family: 'Inter', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;    /* Tambahkan ini supaya konten vertikal tengah! */
+  padding-top: 0;             /* Hilangkan padding atas, nggak perlu lagi */
+}
+
+/* ====== Navbar ====== */
+.cu-navbar {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 10px 20px; /* UBAH di sini! */
+  color: #fff;
+  margin-top: -20px;
+}
+
+/* ====== Judul Halaman ====== */
+.cu-title {
+  margin: 30px 0 32px 0;
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: .5px;
+}
+
+/* ====== Wrapper Form ====== */
+.cu-form-wrapper {
+  background: #fff;
+  border-radius: 32px; /* Membulatkan sudut */
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10); /* Bayangan lembut */
+  padding: 40px 38px;
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 20px;
+}
+
+/* ====== Grup Field dalam Form ====== */
+.cu-form-group {
+  margin-bottom: 28px;
+}
+
+/* Untuk margin bottom terakhir lebih besar */
+.cu-form-group:last-of-type {
+  margin-bottom: 34px;
+}
+
+/* Label pada Form */
+.cu-form-group label {
+  display: block;
+  color: #232323;
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+  letter-spacing: .02em;
+}
+
+/* Input dan Textarea */
+.cu-form-group input,
+.cu-form-group textarea {
+  width: 100%;
+  border-radius: 32px;
+  border: 1.5px solid #d6d6d6;
+  padding: 13px 22px;
+  font-size: 1rem;
+  background: #f8f8f8;
+  outline: none;
+  margin-top: 0;
+  font-family: inherit;
+}
+
+/* Textarea lebih pendek, tidak bisa di-resize */
+.cu-form-group textarea {
+  resize: none;
+  height: 70px;
+}
+
+/* ====== Tombol Submit ====== */
+.cu-submit-btn {
+  width: 40%;
+  padding: 13px 0;
+  border: none;
+  border-radius: 32px;
+  background: linear-gradient(90deg,#2447f9 0%,#9e6af6 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: opacity .2s;
+  box-shadow: 0 2px 8px 0 rgba(120, 120, 200, .09);
+}
+
+/* General container to wrap everything */
+.about-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--blue-darkest); /* Dark Blue Background */
+}
+
+/* About page section container */
+.about-page .about-container {
+  padding: 50px;
+  max-width: 900px; /* Set max-width to make it not too stretched */
+  width: 100%; /* Ensure it takes full available width but doesn't stretch too much */
+  box-sizing: border-box;
+  margin-top: 50px; /* Reduced spacing */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Section styling with background */
+.about-page .about-header,
+.about-page .about-content {
+  background-color: #bdcfff; /* Lighter Blue background for sections */
+  padding: 40px 30px; /* Adjust padding for more space around the text */
+  margin: 20px 0; /* Increased margin between sections */
+  border-radius: 15px; /* Rounded corners */
+  width: 100%; /* Full-width background */
+  max-width: 900px; /* Restrict width to make it look like a box */
+}
+
+/* Adjust padding inside the header, content, and simplify text containers */
+.about-page .about-header h1,
+.about-page .about-content h2 {
+  padding-bottom: 20px; /* Adds space below the heading */
+}
+
+/* END OF CONTACT US */
+
+/* START OF CTA */
+
+.simplify-text-container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  background-color: #bdcfff;
+  padding: 30px; 
+  margin: 20px 0; 
+  border-radius: 15px; 
+  width: 100%; 
+  max-width: 900px; 
+}
+
+.simplify-text-container .simplify-text-container__left-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.simplify-text-container .simplify-text-container__left-col h3 {
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+
+.simplify-text-container .simplify-text-container__left-col p {
+  font-size: 1rem;
+  padding-bottom: 25px;
+}
+
+.simplify-text-container .simplify-text-container__left-col a {
+  text-decoration: none;
+  max-width: fit-content;
+}
+
+.simplify-text-container .simplify-text-container__right-col img {
+  width: 280px;
+}
+
+/* END OF CTA */
+
+/* START OF SUMMARY PAGE */
+
+.summary-tool-container {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Stack elements vertically */
+  max-width: 100%;
+  margin: 0 auto; /* Center the container horizontally */
+  background-color: var(--blue-darkest);
+  min-height: 100vh;
+}
+
+.summary-tool {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  line-height: 1.5rem;
+  width: 100%;
+}
+
+.summary-tool__right-col {
+  width: 70%;
+  margin-bottom: 12px;
+}
+
+.summary-tool__top {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  height: 50px;
+  margin-bottom: 10px;
+  gap: 10px;
+  background-color: var(--blue-lightest);
+  border-radius: 999px;
+  width: 100%;
+}
+
+.summary-tool__top p {
+  font-size: 1rem;
+}
+
+.summary-tool__bottom {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--blue-lightest);
+  width: 100%;
+}
+
+.summary-tool_bottom_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary-form .summary-tool_bottom_buttons .summary-tool_button_left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.summary-tool_button_right .delete__button {
+  background-color: red;
+  border: none;
+  border-radius: 999px;
+  padding: 15px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  min-width: 100px;
+  color: var(--primary-text-color) !important;
+
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.summary-tool_button_right .delete__button {
+  background-image: none;
+  background-color: red;
+}
+
+.summary-tool_button_right .delete__button:hover {
+  background-color: rgb(189, 0, 0);
+}
+
+.summary-tool_button_right .delete__button i, .edit__button i {
+  margin-right: 10px;
+}
+
+.summary-btn {
+  background-color: transparent;
+  color: black;
+  font-size: 1rem;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+}
+
+a.summary-btn {
+  text-decoration: none;
+}
+
+.summary-form textarea {
+  width: 100%;
+  height: 250px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "Arial", sans-serif;
+  border: none;
+  background-color: transparent;
+  resize: none;
+}
+
+.summary-form textarea:focus-visible {
+  outline: none;
+}
+
+.summary-tool_file_input {
+  display: none;
+}
+
+.summary-keywords-buttons {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.summary-keywords-button {
+  flex: 0 0 auto;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background-color: transparent;
+  border: 2px solid var(--blue);
+
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.summary-keywords-button:hover {
+  background-color: var(--blue);
+  color: var(--primary-text-color);
+}
+
+/* END OF SUMMARY PAGE */
