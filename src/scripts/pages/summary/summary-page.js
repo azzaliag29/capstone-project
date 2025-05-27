@@ -1,7 +1,7 @@
 export default class SummaryPage {
   async render() {
     return `
-      <section class="summary-tool-container container">
+      <section class="summary-tool-container">
         <div class="section-header">
           <h1 class="section-title">Article-1.pdf</h1>
         </div>
@@ -9,10 +9,10 @@ export default class SummaryPage {
         <div class="summary-tool__right-col">
           <div class="summary-tool__top">
             <p>Keywords:</p>
-            <div class="summary-keywords-buttons">
-              <button class="summary-keywords-button" type="button">Keyword 1</button>
-              <button class="summary-keywords-button" type="button">Keyword 2</button>
-              <button class="summary-keywords-button" type="button">Keyword 3</button>
+            <div class="keywords-buttons">
+              <button class="keywords-button" type="button">Keyword 1</button>
+              <button class="keywords-button" type="button">Keyword 2</button>
+              <button class="keywords-button" type="button">Keyword 3</button>
             </div>
           </div>
 
@@ -39,20 +39,22 @@ export default class SummaryPage {
                 </div>
 
                 <div class="summary-tool_button_right">
-                  <button id="edit-button" class="edit__button primary-btn" type="button"><i class="fa-solid fa-pen-to-square"></i>Edit</button>
-                  <button id="delete-button" class="delete__button" type="button"><i class="fa-solid fa-trash"></i>Delete</button>
+                  <button id="edit-button" class="edit__button primary-btn" type="button"><i class="fa-solid fa-pen-to-square"></i><span>Edit</span></button>
+                  <button id="delete-button" class="delete__button" type="button"><i class="fa-solid fa-trash"></i><span>Delete</span></button>
                 </div>
               </div>
             </form>
           </div>
         </div>
+      </section>
 
-        <div class="cta-container">
+      <section>
+        <div class="cta-container container">
           <div class="simplify-text-container">
             <div class="simplify-text-container__left-col">
               <h3>Let’s Simplify Your Text</h3>
               <p>Quickly transform long content into clear and concise summaries. Ideal for essays, blogs, or research articles to help you focus on what matters.</p>
-              <a href="#/summary" class="primary-btn">Try Now For Free</a>
+              <a href="#/" class="primary-btn">Try Now For Free</a>
             </div>
             <div class="simplify-text-container__right-col">
               <img src="images/cta-image.png" alt="Simplify Text" class="simplify-image">
@@ -66,6 +68,7 @@ export default class SummaryPage {
   async afterRender() {
     // Access buttons and textarea
     const editButton = document.getElementById("edit-button");
+    const editButtonText = editButton.querySelector("span");
     const deleteButton = document.getElementById("delete-button");
     const textarea = document.getElementById("text-output");
 
@@ -74,10 +77,10 @@ export default class SummaryPage {
       if (textarea.hasAttribute("readonly")) {
         textarea.removeAttribute("readonly");
         textarea.focus();
-        editButton.textContent = "Save"; // Change the button text to "Save"
+        editButtonText.textContent = "Save"; // Change the button text to "Save"
       } else {
         textarea.setAttribute("readonly", true);
-        editButton.textContent = "Edit"; // Change the button text back to "Edit"
+        editButtonText.textContent = "Edit"; // Change the button text back to "Edit"
       }
     });
 

@@ -162,8 +162,6 @@ export default class SummarizePage {
 
         <div class="faq-bg"></div>
       </section>
-
-      <section class="cta-container container"></section>
     `;
   }
 
