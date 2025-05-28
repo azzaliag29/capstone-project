@@ -31,9 +31,9 @@ export default class ContactUsPage {
   }
 
   async afterRender() {
-    const form = document.getElementById('contact-form');
+    const form = document.getElementById("contact-form");
     if (form) {
-      form.addEventListener('submit', (e) => {
+      form.addEventListener("submit", (e) => {
         e.preventDefault();
 
         const name = form.name.value;

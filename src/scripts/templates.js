@@ -4,7 +4,7 @@ export function generateLibraryItemTemplate({
   description,
   createdAt,
 }) {
-    return `
+  return `
       <div tabindex="0" class="library-item" data-libraryid="${id}">
         <div class="library-item__illustration">
           <img src="images/file-illustration.png" alt="File illustration">
@@ -27,11 +27,11 @@ export function generateLibraryItemTemplate({
           </div>
         </div>
       </div>
-    `
+    `;
 }
 
 export function generateLibraryListEmptyTemplate() {
-    return `
+  return `
       <div id="library-list-empty" class="library-list__empty">
         <img src="images/error-empty-illustration.png" alt="Empty library list" class="library-list__empty__image">
         <div class="library-list__empty__desc">
@@ -39,11 +39,11 @@ export function generateLibraryListEmptyTemplate() {
           <p>Looks like you haven’t saved any summaries</p>
         </div>
       </div>
-    `
+    `;
 }
 
 export function generateLibraryListErrorTemplate() {
-    return `
+  return `
       <div id="library-list-error" class="library-list__error">
         <img src="images/error-empty-illustration.png" alt="Error library list" class="library-list__error__image">
         <div class="library-list__error__desc">
@@ -53,5 +53,5 @@ export function generateLibraryListErrorTemplate() {
             }</p>
         </div>
       </div>
-    `
+    `;
 }

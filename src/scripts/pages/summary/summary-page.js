@@ -54,7 +54,7 @@ export default class SummaryPage {
             <div class="simplify-text-container__left-col">
               <h3>Let’s Simplify Your Text</h3>
               <p>Quickly transform long content into clear and concise summaries. Ideal for essays, blogs, or research articles to help you focus on what matters.</p>
-              <a href="#/" class="primary-btn">Try Now For Free</a>
+              <a href="#/summarize" class="primary-btn">Try Now For Free</a>
             </div>
             <div class="simplify-text-container__right-col">
               <img src="images/cta-image.png" alt="Simplify Text" class="simplify-image">
@@ -86,6 +86,6 @@ export default class SummaryPage {
     // Delete Button functionality
     deleteButton.addEventListener("click", () => {
       textarea.value = ""; // Clear the textarea content
-    });
-  }
+    });
+  }
 }

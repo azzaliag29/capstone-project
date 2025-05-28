@@ -1,21 +1,21 @@
-import HomePage from '../pages/home/home-page';
-import AboutPage from '../pages/about/about-page';
-import LoginPage from '../pages/auth/login/login-page';
-import RegisterPage from '../pages/auth/register/register-page';
-import ContactUs from '../pages/contactus/contact-us-page';
-import SummaryPage from '../pages/summary/summary-page';
-import SummarizePage from '../pages/summarize/summarize-page';
-import LibraryPage from '../pages/library/library-page';
+import HomePage from "../pages/home/home-page";
+import AboutPage from "../pages/about/about-page";
+import LoginPage from "../pages/auth/login/login-page";
+import RegisterPage from "../pages/auth/register/register-page";
+import ContactUs from "../pages/contactus/contact-us-page";
+import SummaryPage from "../pages/summary/summary-page";
+import SummarizePage from "../pages/summarize/summarize-page";
+import LibraryPage from "../pages/library/library-page";
 
 const routes = {
-  '/': new HomePage(),
-  '/about': new AboutPage(),
-  '/login': new LoginPage(),
-  '/register': new RegisterPage(),
-  '/contact': new ContactUs(),
-  '/summary': new SummaryPage(),
-  '/summarize': new SummarizePage(),
-  '/library': new LibraryPage(),
+  "/": new HomePage(),
+  "/about": new AboutPage(),
+  "/login": new LoginPage(),
+  "/register": new RegisterPage(),
+  "/contact": new ContactUs(),
+  "/summary": new SummaryPage(),
+  "/summarize": new SummarizePage(),
+  "/library": new LibraryPage(),
 };
 
 export default routes;
