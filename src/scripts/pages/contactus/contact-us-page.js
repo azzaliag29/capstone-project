@@ -2,7 +2,11 @@ export default class ContactUsPage {
   async render() {
     return `
       <section class="contactus-container">
-        <h1 class="cu-title">Talk To Our Team</h1>
+        <div class="section-header">
+          <h1 class="section-title">Talk To Our Team</h1>
+          <p>Need help? Our team is just a step away</p>
+        </div>
+
         <div class="cu-form-wrapper">
           <form id="contact-form">
             <div class="cu-form-group">
@@ -17,7 +21,7 @@ export default class ContactUsPage {
               <label for="message-input">Your Message</label>
               <textarea id="message-input" name="message" placeholder="Write your message here..." rows="3"></textarea>
             </div>
-            <button type="submit" class="cu-submit-btn">
+            <button type="submit" id="cu-submit-btn" class="primary-btn">
               Submit Message
             </button>
           </form>
@@ -27,9 +31,9 @@ export default class ContactUsPage {
   }
 
   async afterRender() {
-    const form = document.getElementById('contact-form');
+    const form = document.getElementById("contact-form");
     if (form) {
-      form.addEventListener('submit', (e) => {
+      form.addEventListener("submit", (e) => {
         e.preventDefault();
 
         const name = form.name.value;

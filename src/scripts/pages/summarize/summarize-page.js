@@ -10,10 +10,12 @@ export default class SummarizePage {
         <div class="summarize-tool">
           <div class="summarize-tool__left-col">
             <div class="summarize-tool__top">
-              <i class="fa-solid fa-globe"></i>
-              <div class="language-button">
-                <p>Bahasa Indonesia</p>
-                <i class="fa-solid fa-chevron-down"></i>
+              <div class="language-selector">
+                <label for="language"><i class="fa-solid fa-globe"></i></label>
+                <select name="language" id="language" class="language-selector__button">
+                  <option value="indonesia">Indonesia</option>
+                  <option value="english">English</option>
+                </select>
               </div>
             </div>
 
@@ -40,7 +42,7 @@ export default class SummarizePage {
                   </div>
                     
                   <div class="summarize-tool__button__right">
-                    <button id="summarize-button" class="submit__button btn" type="submit">Summarize</button>
+                    <button id="summarize-button" class="submit__button primary-btn" type="submit">Summarize</button>
                   </div>
                 </div>
               </form>
@@ -80,7 +82,7 @@ export default class SummarizePage {
                   </div>
 
                   <div class="summarize-tool__button__right">
-                    <button id="save-button" class="save__button btn" type="submit">Save to library</button>
+                    <button id="save-button" class="save__button primary-btn" type="submit">Save to library</button>
                   </div>
                 </div>
               </form>
@@ -97,52 +99,69 @@ export default class SummarizePage {
           <p>Here are the most asked question by our user</p>
         </div>
 
-        <ul class="faq-list">
-          <li>
-            <div class="faq-item__title">
-              <h2>What is AI Summarizer?</h2>
-              <i class="fa-solid fa-chevron-down"></i>
+        <div class="faq-list">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  What is AI Summarizer?
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">AI Summarizer is an artificial intelligence-powered tool that helps you condense long texts into shorter and easy-to-understand versions.</div>
+              </div>
             </div>
-            <p class="faq-item__body hidden">AI Summarizer is an artificial intelligence-powered tool that helps you condense long texts into shorter and easy-to-understand versions.</P>
-          </li>
 
-          <li>
-            <div class="faq-item__title">
-              <h2>Can i summarize PDFs or only plain text?</h2>
-              <i class="fa-solid fa-chevron-down"></i>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Can i summarize PDFs or only plain text?
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">You can upload documents in formats like PDF or simply paste plain text into the input field.</div>
+              </div>
             </div>
-            <p class="faq-item__body hidden">You can upload documents in formats like PDF or simply paste plain text into the input field.</P>
-          </li>
 
-          <li>
-            <div class="faq-item__title">
-              <h2>Are the summaries 100% accurate?</h2>
-              <i class="fa-solid fa-chevron-down"></i>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Are the summaries 100% accurate?
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">AI Summarizer is designed to provide relevant and logical summaries, but we recommend reviewing the output to ensure contextual accuracy.</div>
+              </div>
             </div>
-            <p class="faq-item__body hidden">AI Summarizer is designed to provide relevant and logical summaries, but we recommend reviewing the output to ensure contextual accuracy.</P>
-          </li>
 
-          <li>
-            <div class="faq-item__title">
-              <h2>Can i save my summaries for later?</h2>
-              <i class="fa-solid fa-chevron-down"></i>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Can i save my summaries for later?
+                </button>
+              </h2>
+              <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Yes. Your summaries are saved in your personal library so you can revisit and manage them anytime.</div>
+              </div>
             </div>
-            <p class="faq-item__body hidden">Yes. Your summaries are saved in your personal library so you can revisit and manage them anytime.</P>
-          </li>
 
-          <li>
-            <div class="faq-item__title">
-              <h2>Does Quibly store my uploaded data?</h2>
-              <i class="fa-solid fa-chevron-down"></i>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Does Quibly store my uploaded data?
+                </button>
+              </h2>
+              <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Yes. Your input and generated summaries are stored securely in your personal account library for future access. We prioritize user privacy and data security.</div>
+              </div>
             </div>
-            <p class="faq-item__body hidden">Yes. Your input and generated summaries are stored securely in your personal account library for future access. We prioritize user privacy and data security.</P>
-          </li>
-        </ul>
+
+            <div class="accordion-item"></div>
+          </div>
+        </div>
 
         <div class="faq-bg"></div>
       </section>
-
-      <section class="cta-container container"></section>
     `;
   }
 

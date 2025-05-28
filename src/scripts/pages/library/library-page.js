@@ -57,8 +57,6 @@ export default class LibraryPage {
 
         <div class="gradient-image"></div>
       <section>
-
-      <section class="cta-container"></section>
     `;
   }
 

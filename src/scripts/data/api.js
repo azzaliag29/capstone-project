@@ -1,4 +1,4 @@
-import CONFIG from '../config';
+import CONFIG from "../config";
 
 const ENDPOINTS = {
   ENDPOINT: `${CONFIG.BASE_URL}/your/endpoint/here`,
