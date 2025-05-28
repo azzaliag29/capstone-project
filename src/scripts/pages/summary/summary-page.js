@@ -39,8 +39,8 @@ export default class SummaryPage {
                 </div>
 
                 <div class="summary-tool_button_right">
-                  <button id="edit-button" class="edit__button primary-btn" type="button"><i class="fa-solid fa-pen-to-square"></i><span>Edit</span></button>
-                  <button id="delete-button" class="delete__button" type="button"><i class="fa-solid fa-trash"></i><span>Delete</span></button>
+                  <button id="edit-button" class="edit__button primary-btn" type="button"><i class="fa-solid fa-pen-to-square"></i>Edit</button>
+                  <button id="delete-button" class="delete__button" type="button"><i class="fa-solid fa-trash"></i>Delete</button>
                 </div>
               </div>
             </form>
@@ -68,7 +68,6 @@ export default class SummaryPage {
   async afterRender() {
     // Access buttons and textarea
     const editButton = document.getElementById("edit-button");
-    const editButtonText = editButton.querySelector("span");
     const deleteButton = document.getElementById("delete-button");
     const textarea = document.getElementById("text-output");
 
@@ -77,10 +76,10 @@ export default class SummaryPage {
       if (textarea.hasAttribute("readonly")) {
         textarea.removeAttribute("readonly");
         textarea.focus();
-        editButtonText.textContent = "Save"; // Change the button text to "Save"
+        editButton.innerHTML = '<i class="fa-solid fa-check"></i>Save';
       } else {
         textarea.setAttribute("readonly", true);
-        editButtonText.textContent = "Edit"; // Change the button text back to "Edit"
+        editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>Edit';
       }
     });
 
