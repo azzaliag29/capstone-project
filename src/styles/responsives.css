@@ -44,7 +44,7 @@
   }
 
   /* Styling for the image inside "Let’s Simplify Your Text" section */
-  .about-page .simplify-text-container .simplify-text-container__right-col img {
+  .simplify-text-container .simplify-text-container__right-col img {
     display: none;
   }
 
@@ -64,6 +64,10 @@
 
   .section-title {
     font-size: 2rem;
+  }
+
+  .faq-container {
+    width: 100%;
   }
 
   .faq-item__title h2 {

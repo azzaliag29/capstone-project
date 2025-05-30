@@ -1,11 +1,11 @@
 export function generateLibraryItemTemplate({
-  id,
+  _id,
   title,
-  description,
-  createdAt,
+  summary,
+  savedAt,
 }) {
   return `
-      <div tabindex="0" class="library-item" data-libraryid="${id}">
+      <div tabindex="0" class="library-item" data-libraryid="${_id}">
         <div class="library-item__illustration">
           <img src="images/file-illustration.png" alt="File illustration">
         </div>
@@ -14,14 +14,18 @@ export function generateLibraryItemTemplate({
           <div class="library-item__header">
             <h2 class="library-item__title">${title}</h2>
             <div class="library-item__desc">
-              <p>${description}</p>
+              <p>${summary}</p>
             </div>
           </div>
 
           <div class="library-item__footer">
-            <p class="library-item__date">Saved at <span>${createdAt}</span></p>
+            <p class="library-item__date">Saved at
+              <span>
+                ${showFormattedDate(savedAt,"id-ID")}
+              </span>
+            </p>
             <div class="library-item__buttons">
-              <a href="#/library/id"><button id="open-button"><i class="fa-solid fa-chevron-right"></i></button></a>
+              <a href="#/summaries/${_id}" class="open-button"><i class="fa-solid fa-chevron-right"></i></a>
               <button id="delete-button"><i class="fa-solid fa-trash"></i></button>
             </div>
           </div>

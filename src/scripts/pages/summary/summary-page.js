@@ -1,9 +1,9 @@
 export default class SummaryPage {
   async render() {
     return `
-      <section class="summary-tool-container">
+      <section class="summary-tool-container container">
         <div class="section-header">
-          <h1 class="section-title">Article-1.pdf</h1>
+          <h1 class="section-title">Article-1.pdf<i class="fa-solid fa-pen"></i></h1>
         </div>
 
         <div class="summary-tool__right-col">

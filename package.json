@@ -6,7 +6,9 @@
     "build": "webpack --config webpack.prod.js",
     "start-dev": "webpack serve --config webpack.dev.js",
     "serve": "http-server dist",
-    "write": "npx prettier --write ."
+    "write": "npx prettier --write .",
+    "lint": "eslint ./src",
+    "fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "YOUR_NAME <yourmail@mail.com>",
