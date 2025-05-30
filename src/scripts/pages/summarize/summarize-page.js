@@ -2,8 +2,10 @@ import SummarizePresenter from "./summarize-presenter";
 import * as SummaryAPI from "../../data/api";
 
 export default class SummarizePage {
-  #presenter;
-  #form;
+  #presenter = null;
+  #form = null;
+  #uploadedContent = null;
+  #maxFileSize = 1048576 * 10;
 
   async render() {
     return `
@@ -19,7 +21,7 @@ export default class SummarizePage {
               <div class="language-selector">
                 <label for="language"><i class="fa-solid fa-globe"></i></label>
                 <select name="language" id="language" class="language-selector__button">
-                  <option value="id">Indonesian</option>
+                  <option value="id" selected>Indonesian</option>
                   <option value="en">English</option>
                 </select>
               </div>
@@ -181,42 +183,59 @@ export default class SummarizePage {
       view: this,
       model: SummaryAPI,
     });
+    this.#uploadedContent;
 
     this.#setupForm();
   }
 
   #setupForm() {
-      this.#form = document.getElementById("summarize-input-form");
-      this.#form.addEventListener("submit", async (event) => {
-        event.preventDefault();
+    this.#form = document.getElementById("summarize-input-form");
+    this.#form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      
+      const textInput = document.getElementById('text-input').value;
+      const fileInput = document.getElementById('file-input').files[0];
 
-      const inputFile = document.getElementById("file-input");
-      document
-        .getElementById("input-button")
-        .addEventListener("click", () => {
-          inputFile.click();
-          this.storeNewStory();
-        });
-      });
+      if (!textInput && !fileInput) {
+        return alert("Please upload a file or enter text.");
+      }
+
+      if (fileInput) {
+        if (fileInput.size > this.#maxFileSize) {
+          alert("File size exceeds the maximum limit of 10MB.");
+          return;
+        }
+        this.#uploadedContent = fileInput;
+      }
+
+      if (textInput) {
+        this.#uploadedContent = textInput;
+      }
+
+      const data = {
+        language: document.getElementById("language").value,
+        originalContent: this.#uploadedContent,
+      };
+      await this.#presenter.postNewSummary(data);
+    });
+
+    document
+      .getElementById("input-button")
+      .addEventListener("click", () => {
+        document.getElementById("file-input").click();
+    });
+  }
+
+  storeSuccessfully(message) {
+      console.log(message);
+      this.clearForm();
     }
 
-  async storeNewStory() {
-  const formData = new FormData();
-  formData.set("language", "English");
-  formData.set("file", "photo");
-  formData.set("lat", lat);
-  formData.set("lon", lon);
+    storeFailed(message) {
+      alert(message);
+    }
 
-  const fetchResponse = await fetch("http://localhost:5000/summaries", {
-    method: "POST",
-    body: formData,
-  });
-  const json = await fetchResponse.json();
-  console.log(json);
-
-  return {
-    ...json,
-    ok: fetchResponse.ok,
-  };
-}
+    clearForm() {
+      this.#form.reset();
+    }
 }

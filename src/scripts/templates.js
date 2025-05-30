@@ -1,4 +1,6 @@
-export function generateLibraryItemTemplate({
+import { showFormattedDate } from "./utils";
+
+export function generateSummaryItemTemplate({
   _id,
   title,
   summary,
@@ -34,7 +36,7 @@ export function generateLibraryItemTemplate({
     `;
 }
 
-export function generateLibraryListEmptyTemplate() {
+export function generateSummaryListEmptyTemplate() {
   return `
       <div id="library-list-empty" class="library-list__empty">
         <img src="images/error-empty-illustration.png" alt="Empty library list" class="library-list__empty__image">
@@ -46,7 +48,7 @@ export function generateLibraryListEmptyTemplate() {
     `;
 }
 
-export function generateLibraryListErrorTemplate() {
+export function generateSummaryListErrorTemplate(message) {
   return `
       <div id="library-list-error" class="library-list__error">
         <img src="images/error-empty-illustration.png" alt="Error library list" class="library-list__error__image">
