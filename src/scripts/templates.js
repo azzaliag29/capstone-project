@@ -1,13 +1,13 @@
 import { showFormattedDate } from "./utils";
 
 export function generateSummaryItemTemplate({
-  _id,
+  id,
   title,
   summary,
   savedAt,
 }) {
   return `
-      <div tabindex="0" class="library-item" data-libraryid="${_id}">
+      <div tabindex="0" class="library-item" data-libraryid="${id}">
         <div class="library-item__illustration">
           <img src="images/file-illustration.png" alt="File illustration">
         </div>
@@ -27,7 +27,7 @@ export function generateSummaryItemTemplate({
               </span>
             </p>
             <div class="library-item__buttons">
-              <a href="#/summaries/${_id}" class="open-button"><i class="fa-solid fa-chevron-right"></i></a>
+              <a href="#/summaries/${id}" class="open-button"><i class="fa-solid fa-chevron-right"></i></a>
               <button class="delete-button"><i class="fa-solid fa-trash"></i></button>
             </div>
           </div>
