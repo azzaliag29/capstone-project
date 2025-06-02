@@ -61,7 +61,3 @@ export function generateSummaryListErrorTemplate(message) {
       </div>
     `;
 }
-
-export function generateKeywords(text) {
-  return `<a href="" class="keywords-button">${text}</a>`;
-}

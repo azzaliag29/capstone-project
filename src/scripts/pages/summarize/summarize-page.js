@@ -261,11 +261,12 @@ export default class SummarizePage {
     keywordContainer.innerHTML = "";
 
     keywords.forEach((keyword) => {
-      const keywordsButton = document.createElement("a");
-      keywordsButton.className = "keywords-button";
-      keywordsButton.href = "#";
-      keywordsButton.textContent = keyword;
-      keywordContainer.appendChild(keywordsButton);
+      const encodedKeyword = encodeURIComponent(keyword);
+      const keywordButton = document.createElement("a");
+      keywordButton.className = "keywords-button";
+      keywordButton.href = `https://scholar.google.com/scholar?q=${encodedKeyword}`;
+      keywordButton.textContent = keyword;
+      keywordContainer.appendChild(keywordButton);
     });
   }
 
