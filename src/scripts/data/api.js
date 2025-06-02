@@ -6,7 +6,7 @@ const ENDPOINTS = {
   SUMMARY_DETAIL: (id) => `${BASE_URL}/summaries/${id}`,
 };
 
-export async function storeSummary({ language, originalContent }) {
+export async function createSummary({ language, originalContent }) {
   const formData = new FormData();
   formData.set("language", language);
   formData.set("originalContent", originalContent);

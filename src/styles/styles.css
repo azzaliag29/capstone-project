@@ -304,7 +304,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   position: relative;
 }
 
-.summarize-form .file-preview {
+.summarize-form #file-preview {
   display: flex;
   justify-content: center;
   align-items: center;    
@@ -319,11 +319,11 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   transition: 150ms ease-in-out;
 }
 
-.summarize-form .file-preview:hover {
+.summarize-form #file-preview:hover {
   background-color: #99B5FF;
 }
 
-.summarize-form .file-preview img {
+.summarize-form #file-preview img {
   width: 150px;
 }
 
@@ -356,6 +356,8 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
 
 .keywords-button {
   flex: 0 0 auto;
+  color: black;
+  text-decoration: none;
   padding: 4px 20px;
   font-size: 0.9rem;
   border-radius: 999px;
@@ -372,8 +374,14 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
 }
 
 .submit__button,
-.save__button {
+.view__button {
   padding: 12px 40px !important;
+}
+
+.view__button {
+  display: inline-block; 
+  text-decoration: none;
+  text-align: center; 
 }
 
 .gradient-orbs {
@@ -449,7 +457,8 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+  overflow: hidden;
 }
 
 .library-item__title {
@@ -461,14 +470,18 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-height: 200px;
 }
 
 .library-item__desc {
-  max-height: 50px;
-  overflow: hidden;
+  max-height: 30px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+
+.library-item__date {
+  margin: 0;
 }
 
 .library-item__footer {
@@ -496,6 +509,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   border: none;
   border-radius: 999px;
   cursor: pointer;
+  text-decoration: none;
 
   transition: all 150ms ease-in-out;
 }

@@ -10,9 +10,9 @@ export default class SummaryPage {
           <div class="summary-tool__top">
             <p>Keywords:</p>
             <div class="keywords-buttons">
-              <button class="keywords-button" type="button">Keyword 1</button>
-              <button class="keywords-button" type="button">Keyword 2</button>
-              <button class="keywords-button" type="button">Keyword 3</button>
+              <a href="" class="keywords-button">Keyword 1</a>
+              <a href="" class="keywords-button">Keyword 2</a>
+              <a href="" class="keywords-button">Keyword 3</a>
             </div>
           </div>
 

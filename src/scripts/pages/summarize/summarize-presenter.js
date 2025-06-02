@@ -7,23 +7,25 @@ export default class SummarizePresenter {
     this.#model = model;
   }
 
-  async postNewSummary({ language, originalContent }) {
+  async createNewSummary({ language, originalContent }) {
     try {
       const data = {
         language: language,
         originalContent: originalContent,
       };
 
-      const response = await this.#model.storeSummary(data);
+      const response = await this.#model.createSummary(data);
 
       if (!response.ok) {
-        console.error("postNewSummary: response:", response);
-        this.#view.storeFailed(response.message);
+        console.error("createNewSummary: response:", response);
+        this.#view.createFailed(response.message);
         return;
-      } 
+      }
+      
+      this.#view.createSuccessfully(response.message);
     } catch (error) {
-      console.error("postNewSummary: error:", error);
-      this.#view.storeFailed(error.message);
+      console.error("createNewSummary: error:", error);
+      this.#view.createFailed(error.message);
     }
   }
 }
