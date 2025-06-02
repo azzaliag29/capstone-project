@@ -50,6 +50,8 @@ export default class LibraryPage {
     document.getElementById("library-list").innerHTML = `
       <div class="library-list">${html}</div>
     `;
+
+    this.deleteButtonListeners();
   }
 
   populateSummaryListEmpty() {
@@ -60,6 +62,18 @@ export default class LibraryPage {
   populateSummaryListError(message) {
     document.getElementById("library-list").innerHTML =
       generateSummaryListErrorTemplate(message);
+  }
+
+  deleteButtonListeners() {
+    const deleteButtons = document.querySelectorAll(".delete-button");
+
+    deleteButtons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        const libraryItem = event.target.closest(".library-item");
+        const libraryItemId = libraryItem.getAttribute("data-libraryid");
+        this.#presenter.deleteButtonHandler(libraryItemId);
+      })
+    })
   }
 }
 
