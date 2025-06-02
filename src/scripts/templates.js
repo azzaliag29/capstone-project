@@ -27,8 +27,8 @@ export function generateSummaryItemTemplate({
               </span>
             </p>
             <div class="library-item__buttons">
-              <a href="#/summaries/${id}" class="open-button"><i class="fa-solid fa-chevron-right"></i></a>
-              <button class="delete-button"><i class="fa-solid fa-trash"></i></button>
+              <a href="#/summaries/${id}" class="open-button" aria-label="Open summary"><i class="fa-solid fa-chevron-right"></i></a>
+              <button class="delete-button" aria-label="Delete summary"><i class="fa-solid fa-trash"></i></button>
             </div>
           </div>
         </div>
@@ -63,5 +63,5 @@ export function generateSummaryListErrorTemplate(message) {
 }
 
 export function generateKeywords(text) {
-  return `<button class="keywords-button" type="button">${text}</button>`;
+  return `<a href="" class="keywords-button">${text}</a>`;
 }

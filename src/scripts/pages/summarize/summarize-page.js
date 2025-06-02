@@ -42,8 +42,7 @@ export default class SummarizePage {
 
                 <div class="summarize-tool__bottom__buttons">
                   <div class="summarize-tool__button__left">
-                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
-                    <button id="input-button" class="summarize-btn" type="button">Upload PDF</button>
+                    <button id="input-button" class="summarize-btn" type="button"><i class="fa-solid fa-arrow-up-from-bracket"></i>Upload PDF</button>
                     <input
                       id="file-input"
                       class="summarize-tool__file__input"
@@ -64,11 +63,7 @@ export default class SummarizePage {
           <div class="summarize-tool__right-col">
             <div class="summarize-tool__top">
               <p>Keywords:</p>
-              <div class="keywords-buttons">
-                <a href="" class="keywords-button">Keyword 1</a>
-                <a href="" class="keywords-button">Keyword 2</a>
-                <a href="" class="keywords-button">Keyword 3</a>
-              </div>
+              <div class="keywords-buttons"></div>
             </div>
 
             <div class="summarize-tool__bottom">
@@ -82,19 +77,12 @@ export default class SummarizePage {
 
                 <div class="summarize-tool__bottom__buttons">
                   <div class="summarize-tool__button__left">
-                    <div class="download-button-container">
-                      <i class="fa-solid fa-download"></i>
-                      <a href="" download="summary.txt" id="download-button" class="summarize-btn">Download</a>
-                    </div>
-
-                    <div class="copy-button-container">
-                      <i class="fa-solid fa-copy"></i>
-                      <button id="copy-button" class="summarize-btn" type="button">Copy</button>
-                    </div>
+                    <a href="" download="summary.txt" id="download-button" class="summarize-btn"><i class="fa-solid fa-download"></i>Download</a>
+                    <button id="copy-button" class="summarize-btn" type="button"><i class="fa-solid fa-copy"></i>Copy</button>
                   </div>
 
                   <div class="summarize-tool__button__right">
-                    <a href="#/library" "id="view-button" class="view__button primary-btn">View in library</a>
+                    <a href="#/library" id="view-button" class="view__button primary-btn">View in library</a>
                   </div>
                 </div>
               </form>
@@ -248,7 +236,37 @@ export default class SummarizePage {
   }
 
   #setupOutputForm() {
-    
+    const copyButton = document.getElementById("copy-button");
+    const downloadButton = document.getElementById("download-button");
+    const outputTextArea = document.getElementById("text-output");
+
+    copyButton.addEventListener("click", () => {
+      navigator.clipboard.writeText(outputTextArea.value).then(() => {
+        alert("Summary copied to clipboard!");
+      });
+    });
+
+    downloadButton.addEventListener("click", () => {
+      const blob = new Blob([outputTextArea.value], {type: "text/plain"});
+      const url = URL.createObjectURL(blob);
+      downloadButton.href = url;
+    });
+  }
+
+  updateOutput(summary, keywords) {
+    const outputTextArea = document.getElementById("text-output");
+    outputTextArea.value = summary;
+
+    const keywordContainer = document.querySelector(".keywords-buttons");
+    keywordContainer.innerHTML = "";
+
+    keywords.forEach((keyword) => {
+      const keywordsButton = document.createElement("a");
+      keywordsButton.className = "keywords-button";
+      keywordsButton.href = "#";
+      keywordsButton.textContent = keyword;
+      keywordContainer.appendChild(keywordsButton);
+    });
   }
 
   createSuccessfully(message) {

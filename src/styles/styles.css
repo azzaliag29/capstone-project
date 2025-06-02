@@ -297,7 +297,7 @@ a.summarize-btn {
 i[class="fa-solid fa-download"],
 i[class="fa-solid fa-copy"],
 i[class="fa-solid fa-arrow-up-from-bracket"] {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .summarize-form {
@@ -493,7 +493,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
 }
 
 .library-item__footer span {
-  color: var(--purple-light);
+  color: var(--purple-lightest);
 }
 
 .library-item__buttons {
