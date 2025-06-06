@@ -391,7 +391,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   transform: translateX(-50%);
   width: 100vw;
   height: 104vh;
-  background-image: url("/dist/images/summarize-tool-bg.png");
+ /* background-image: url("/dist/images/summarize-tool-bg.png"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -406,7 +406,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   transform: translateX(-50%);
   width: 100vw;
   height: 70vh;
-  background-image: url("/dist/images/faq-bg.png");
+  /* background-image: url("/dist/images/faq-bg.png");*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -545,7 +545,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   transform: translateX(-50%);
   width: 100vw;
   height: 100%;
-  background-image: url("/dist/images/background-gradient.png");
+  /* background-image: url("/dist/images/background-gradient.png"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
