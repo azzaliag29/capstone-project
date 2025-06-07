@@ -65,6 +65,7 @@ a:focus-visible {
   gap: 20px;
   text-align: center;
   margin-block: 50px;
+  max-width: 1300px;
   color: var(--primary-text-color);
 }
 
@@ -73,7 +74,7 @@ a:focus-visible {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
 }
 
@@ -391,7 +392,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   transform: translateX(-50%);
   width: 100vw;
   height: 104vh;
- /* background-image: url("/dist/images/summarize-tool-bg.png"); */
+  background-image: url("/dist/images/summarize-tool-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -406,7 +407,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   transform: translateX(-50%);
   width: 100vw;
   height: 70vh;
-  /* background-image: url("/dist/images/faq-bg.png");*/
+  background-image: url("/dist/images/faq-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -545,7 +546,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   transform: translateX(-50%);
   width: 100vw;
   height: 100%;
-  /* background-image: url("/dist/images/background-gradient.png"); */
+  background-image: url("/dist/images/background-gradient.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -659,7 +660,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
 
 .about-page .about-content h1,
 .about-page .about-content h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   padding-bottom: 20px;
   font-weight: bold;
 }
@@ -721,7 +722,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
 
 /* START OF SUMMARY PAGE */
 
-.summary-tool-container {
+.summary-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -731,23 +732,31 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   background-color: var(--blue-darkest);
 }
 
-.summary-tool-container .section-header .section-title {
+#summary-detail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* .summary-container .section-header .section-title {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.summary-tool-container .section-header .section-title i {
+.summary-container .section-header .section-title i {
   font-size: 1.5rem;
   transition: all 150ms ease-in-out;
   cursor: pointer;
 }
 
-.summary-tool-container .section-header .section-title i:hover {
+.summary-container .section-header .section-title i:hover {
   color: var(--blue-light);
-}
+} */
 
-.summary-tool {
+.summary-container {
   display: flex;
   gap: 10px;
   justify-content: center;
@@ -755,13 +764,13 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   width: 100%;
 }
 
-.summary-tool__right-col {
+.summary-col {
   width: 100%;
   max-width: 1000px;
   margin-bottom: 12px;
 }
 
-.summary-tool__top {
+.summary__top {
   display: flex;
   align-items: center;
   padding: 10px 20px;
@@ -773,30 +782,30 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   width: 100%;
 }
 
-.summary-tool__top p {
+.summary__top p {
   margin: 0;
 }
 
-.summary-tool__bottom {
+.summary__bottom {
   padding: 20px;
   border-radius: 20px;
   background-color: var(--blue-lightest);
   width: 100%;
 }
 
-.summary-tool_bottom_buttons {
+.summary__bottom__buttons {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.summary-form .summary-tool_bottom_buttons .summary-tool_button_left {
+.summary-form .summary__bottom__buttons .summary__button__left {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.summary-tool_button_right .delete__button {
+.summary__button__right .delete__button {
   background-color: red;
   border: none;
   border-radius: 999px;
@@ -810,16 +819,16 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   transition: all 150ms ease-in-out;
 }
 
-.summary-tool_button_right .delete__button {
+.summary__button__right .delete__button {
   background-image: none;
   background-color: red;
 }
 
-.summary-tool_button_right .delete__button:hover {
+.summary__button__right .delete__button:hover {
   background-color: rgb(189, 0, 0);
 }
 
-.summary-tool_button_right .delete__button i,
+.summary__button__right .delete__button i,
 .edit__button i {
   margin-right: 10px;
 }
@@ -850,10 +859,6 @@ a.summary-btn {
 
 .summary-form textarea:focus-visible {
   outline: none;
-}
-
-.summary-tool_file_input {
-  display: none;
 }
 
 /* END OF SUMMARY PAGE */

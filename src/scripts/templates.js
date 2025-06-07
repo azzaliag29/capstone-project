@@ -61,3 +61,52 @@ export function generateSummaryListErrorTemplate(message) {
       </div>
     `;
 }
+
+export function generateSummaryDetailTemplate({
+  title,
+  summary,
+  keywords,
+}) {
+  return `
+    <div class="section-header">
+      <h1 class="section-title" form="summary-form" role="textbox">${title}</h1>
+    </div>
+
+    <div class="summary-col">
+      <div class="summary__top">
+        <p>Keywords:</p>
+        <div class="keywords-buttons">${keywords}</div>
+      </div>
+
+      <div class="summary__bottom">
+        <form id="summary-form" class="summary-form">
+          <textarea
+            id="summary"
+            name="summary"
+            placeholder="Your summary will show here."
+            readonly
+          >${summary}</textarea>
+
+          <div class="summary__bottom__buttons">
+            <div class="summary__button__left">
+              <div class="download-button-container">
+                <i class="fa-solid fa-download"></i>
+                <a href="" download="summary.txt" id="download-button" class="summary-btn">Download</a>
+              </div>
+
+              <div class="copy-button-container">
+                <i class="fa-solid fa-copy"></i>
+                <button id="copy-button" class="summary-btn" type="button">Copy</button>
+              </div>
+            </div>
+
+            <div class="summary__button__right">
+              <button id="edit-button" class="edit__button primary-btn" type="button"><i class="fa-solid fa-pen-to-square"></i>Edit</button>
+              <button id="delete-button" class="delete__button" type="button"><i class="fa-solid fa-trash"></i>Delete</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  `
+}

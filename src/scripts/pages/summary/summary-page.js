@@ -1,51 +1,16 @@
+import SummaryPresenter from "./summary-presenter";
+import * as SummaryAPI from "../../data/api";
+import { generateSummaryDetailTemplate } from "../../templates";
+import { parseActivePathname } from "../../routes/url-parser";
+
 export default class SummaryPage {
+  #presenter = null;
+  #form = null;
+
   async render() {
     return `
-      <section class="summary-tool-container container">
-        <div class="section-header">
-          <h1 class="section-title">Article-1.pdf<i class="fa-solid fa-pen"></i></h1>
-        </div>
-
-        <div class="summary-tool__right-col">
-          <div class="summary-tool__top">
-            <p>Keywords:</p>
-            <div class="keywords-buttons">
-              <a href="" class="keywords-button">Keyword 1</a>
-              <a href="" class="keywords-button">Keyword 2</a>
-              <a href="" class="keywords-button">Keyword 3</a>
-            </div>
-          </div>
-
-          <div class="summary-tool__bottom">
-            <form id="summary-output-form" class="summary-form">
-              <textarea
-                id="text-output"
-                name="summary"
-                placeholder="Your summary will show here."
-                readonly
-              ></textarea>
-
-              <div class="summary-tool_bottom_buttons">
-                <div class="summary-tool_button_left">
-                  <div class="download-button-container">
-                    <i class="fa-solid fa-download"></i>
-                    <a href="" download="summary.txt" id="download-button" class="summary-btn">Download</a>
-                  </div>
-
-                  <div class="copy-button-container">
-                    <i class="fa-solid fa-copy"></i>
-                    <button id="copy-button" class="summary-btn" type="button">Copy</button>
-                  </div>
-                </div>
-
-                <div class="summary-tool_button_right">
-                  <button id="edit-button" class="edit__button primary-btn" type="button"><i class="fa-solid fa-pen-to-square"></i>Edit</button>
-                  <button id="delete-button" class="delete__button" type="button"><i class="fa-solid fa-trash"></i>Delete</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
+      <section class="summary-container container">
+        <div id="summary-detail"></div>
       </section>
 
       <section>
@@ -66,26 +31,101 @@ export default class SummaryPage {
   }
 
   async afterRender() {
-    // Access buttons and textarea
-    const editButton = document.getElementById("edit-button");
-    const deleteButton = document.getElementById("delete-button");
-    const textarea = document.getElementById("text-output");
+    this.#presenter = new SummaryPresenter(parseActivePathname().id, {
+      view: this,
+      model: SummaryAPI,
+    });
+    
+    this.#presenter.getSummaryById();
+  }
 
-    // Edit Button functionality
-    editButton.addEventListener("click", () => {
-      if (textarea.hasAttribute("readonly")) {
-        textarea.removeAttribute("readonly");
-        textarea.focus();
-        editButton.innerHTML = '<i class="fa-solid fa-check"></i>Save';
+  displaySummary(title, summary, keywords) {
+    document.getElementById("summary-detail").innerHTML =
+      generateSummaryDetailTemplate({
+        title,
+        summary,
+        keywords,
+      });
+    
+    this.populateKeywords(keywords);
+    this.#setupForm();
+  }
+
+  #setupForm() {
+    this.#form = document.getElementById("summary-form");
+    const textArea = document.getElementById("summary");
+    const copyButton = document.getElementById("copy-button");
+    const downloadButton = document.getElementById("download-button");
+    const summaryEditButton = document.getElementById("edit-button");
+    const deleteButton = document.getElementById("delete-button");
+
+    copyButton.addEventListener("click", () => {
+      navigator.clipboard.writeText(textArea.value).then(() => {
+        alert("Summary copied to clipboard!");
+      });
+    });
+
+    downloadButton.addEventListener("click", () => {
+      const blob = new Blob([textArea.value], {type: "text/plain"});
+      const url = URL.createObjectURL(blob);
+      downloadButton.href = url;
+    });
+
+    summaryEditButton.addEventListener("click", async () => {
+      const summaryTitle = document.querySelector(".section-title");
+      const isEditing = textArea.hasAttribute("readonly") === false;
+
+      if (!isEditing) {
+        summaryTitle.contentEditable = "true";
+        summaryTitle.focus();
+        textArea.removeAttribute("readonly");
+        summaryEditButton.innerHTML = '<i class="fa-solid fa-check"></i>Save';
       } else {
-        textarea.setAttribute("readonly", true);
-        editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>Edit';
+        summaryTitle.contentEditable = "false";
+        textArea.setAttribute("readonly", true);
+        summaryEditButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>Edit';
+
+        const data = {
+          title: summaryTitle.textContent,
+          summary: textArea.value,
+        };
+
+        await this.#presenter.editSummaryById(data);
       }
     });
 
-    // Delete Button functionality
-    deleteButton.addEventListener("click", () => {
-      textarea.value = ""; // Clear the textarea content
+    deleteButton.addEventListener("click", async () => {
+      const confirmed = confirm("Are you sure you want to delete this summary?");
+      if (!confirmed) return;
+
+      await this.#presenter.deleteSummaryById();
     });
+  }
+
+  populateKeywords(keywords) {
+    const keywordContainer = document.querySelector(".keywords-buttons");
+    keywordContainer.innerHTML = "";
+
+    keywords.forEach((keyword) => {
+      const encodedKeyword = encodeURIComponent(keyword);
+      const keywordButton = document.createElement("a");
+      keywordButton.className = "keywords-button";
+      keywordButton.href = `https://scholar.google.com/scholar?q=${encodedKeyword}`;
+      keywordButton.textContent = keyword;
+      keywordContainer.appendChild(keywordButton);
+    });
+  }
+
+  showSuccess(message) {
+    alert(message);
+    this.clearSummary();
+  }
+
+  showError(message) {
+    alert(message);
+  }
+
+  clearSummary() {
+    this.#form.reset();
   }
 }

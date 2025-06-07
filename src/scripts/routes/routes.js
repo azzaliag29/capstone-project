@@ -13,7 +13,7 @@ const routes = {
   "/login": new LoginPage(),
   "/register": new RegisterPage(),
   "/contactus": new ContactUs(),
-  "/summary": new SummaryPage(),
+  "/summaries/:id": new SummaryPage(),
   "/summarize": new SummarizePage(),
   "/library": new LibraryPage(),
 };

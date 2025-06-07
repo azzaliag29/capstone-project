@@ -1,16 +1,18 @@
 export default class SummaryPresenter {
   #view;
   #model;
+  #summaryId;
 
-  constructor({ view, model }) {
+  constructor(summaryId, { view, model }) {
+    this.#summaryId = summaryId;
     this.#view = view;
     this.#model = model;
   }
 
   // Function to fetch and display summary by ID
-  async getSummaryById(id) {
+  async getSummaryById() {
     try {
-      const response = await this.#model.getSummaryById(id);
+      const response = await this.#model.getSummaryById(this.#summaryId);
 
       if (!response.ok) {
         console.error("getSummaryById: response:", response);
@@ -18,7 +20,7 @@ export default class SummaryPresenter {
         return;
       }
 
-      const { title, summary, keywords } = response.data;
+      const { title, summary, keywords } = response.data.summary;
       
       // Display the fetched summary on the view
       this.#view.displaySummary(title, summary, keywords);
@@ -29,14 +31,14 @@ export default class SummaryPresenter {
   }
 
   // Function to edit summary by ID
-  async editSummaryById(id, { title, summary }) {
+  async editSummaryById({ title, summary }) {
     try {
       const data = {
         title: title,
         summary: summary,
       };
 
-      const response = await this.#model.editSummaryById(id, data);
+      const response = await this.#model.editSummaryById(this.#summaryId, data);
 
       if (!response.ok) {
         console.error("editSummaryById: response:", response);
@@ -44,7 +46,7 @@ export default class SummaryPresenter {
         return;
       }
 
-      this.#view.updateSummary(response.data.title, response.data.summary);
+      this.getSummaryById();
       this.#view.showSuccess(response.message);
     } catch (error) {
       console.error("editSummaryById: error:", error);
@@ -53,9 +55,9 @@ export default class SummaryPresenter {
   }
 
   // Function to delete summary by ID
-  async deleteSummaryById(id) {
+  async deleteSummaryById() {
     try {
-      const response = await this.#model.deleteSummaryById(id);
+      const response = await this.#model.deleteSummaryById(this.#summaryId);
 
       if (!response.ok) {
         console.error("deleteSummaryById: response:", response);
@@ -65,6 +67,7 @@ export default class SummaryPresenter {
 
       this.#view.clearSummary();
       this.#view.showSuccess(response.message);
+      location.hash = "/library";
     } catch (error) {
       console.error("deleteSummaryById: error:", error);
       this.#view.showError(error.message);

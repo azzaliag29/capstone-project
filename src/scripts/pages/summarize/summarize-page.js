@@ -20,7 +20,7 @@ export default class SummarizePage {
             <div class="summarize-tool__top">
               <div class="language-selector">
                 <label for="language"><i class="fa-solid fa-globe"></i></label>
-                <select name="language" id="language" class="language-selector__button" form="text-input">
+                <select name="language" id="language" class="language-selector__button" form="summarize-input-form">
                   <option value="id" selected>Indonesian</option>
                   <option value="en">English</option>
                 </select>
