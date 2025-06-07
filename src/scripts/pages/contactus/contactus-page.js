@@ -1,4 +1,10 @@
+import ContactUsPresenter from "./contactus-presenter";
+import * as SummaryAPI from "../../data/api";
+
 export default class ContactUsPage {
+  #presenter = null;
+  #form = null;
+
   async render() {
     return `
       <section class="contactus-container">
@@ -31,22 +37,37 @@ export default class ContactUsPage {
   }
 
   async afterRender() {
-    const form = document.getElementById("contact-form");
-    if (form) {
-      form.addEventListener("submit", (e) => {
+    this.#presenter = new ContactUsPresenter({
+      view: this,
+      model: SummaryAPI,
+    });
+  
+    this.#setupForm();
+  }
+
+  #setupForm() {
+    this.#form = document.getElementById("contact-form");
+    if (this.#form) {
+      this.#form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const name = form.name.value;
-        const email = form.email.value;
-        const message = form.message.value;
-
-        if (name && email && message) {
-          alert(`Thanks, ${name}! Your message has been submitted.`);
-          form.reset();
-        } else {
-          alert("Please fill in all fields.");
+        const data = {
+          name: this.#form.name.value,
+          email: this.#form.email.value,
+          message: this.#form.message.value,
         }
-      });
+
+        await this.#presenter.submitContactForm(data);
+      })
     }
+  }
+
+  showSuccess(message) {
+    alert(message);
+    this.#form.reset();
+  }
+
+  showError(message) {
+    alert(message);
   }
 }
