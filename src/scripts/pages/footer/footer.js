@@ -1,5 +1,4 @@
-
-class AppFooter extends HTMLElement {
+export class AppFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <footer class="footer">
@@ -24,9 +23,9 @@ class AppFooter extends HTMLElement {
         <div class="footer-section">
           <h4>Social</h4>
           <div class="social-icons">
-            <a href="#"><img src="icons/linkedin.svg" alt="LinkedIn"></a>
-            <a href="#"><img src="icons/twitter.svg" alt="Twitter"></a>
-            <a href="#"><img src="icons/instagram.svg" alt="Instagram"></a>
+            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
           </div>
         </div>
       </footer>
