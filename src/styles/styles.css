@@ -47,7 +47,6 @@ body {
 }
 
 input:focus-visible,
-textarea:focus-visible,
 select:focus-visible,
 button:focus-visible,
 a:focus-visible {
@@ -55,11 +54,11 @@ a:focus-visible {
   box-shadow: 0 0 0 2px var(--blue);
 }
 
-/* .container {
+.container {
   padding-inline: 20px;
   margin-inline: auto;
   max-width: 1300px;
-} */
+}
 
 .section-header {
   display: flex;
@@ -67,6 +66,7 @@ a:focus-visible {
   gap: 20px;
   text-align: center;
   margin-block: 50px;
+  max-width: 1300px;
   color: var(--primary-text-color);
 }
 
@@ -75,7 +75,7 @@ a:focus-visible {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
 }
 
@@ -571,7 +571,34 @@ a.summarize-btn {
 i[class="fa-solid fa-download"],
 i[class="fa-solid fa-copy"],
 i[class="fa-solid fa-arrow-up-from-bracket"] {
-  margin-right: 5px;
+  margin-right: 10px;
+}
+
+.summarize-form {
+  position: relative;
+}
+
+.summarize-form #file-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  top: 0;
+  background-color: #A3BCFF;
+  border-radius: 20px;
+
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+}
+
+.summarize-form #file-preview:hover {
+  background-color: #99B5FF;
+}
+
+.summarize-form #file-preview img {
+  width: 150px;
 }
 
 .summarize-form textarea {
@@ -603,6 +630,8 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
 
 .keywords-button {
   flex: 0 0 auto;
+  color: black;
+  text-decoration: none;
   padding: 4px 20px;
   font-size: 0.9rem;
   border-radius: 999px;
@@ -610,17 +639,23 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   border: 2px solid var(--blue);
 
   cursor: pointer;
-  transition: all 300ms ease-in-out;
+  transition: color 0.2s ease;
 }
 
 .keywords-button:hover {
-  background-color: var(--blue);
   color: var(--primary-text-color);
+  background-image: linear-gradient(to right, var(--blue), var(--purple-light));
 }
 
 .submit__button,
-.save__button {
+.view__button {
   padding: 12px 40px !important;
+}
+
+.view__button {
+  display: inline-block; 
+  text-decoration: none;
+  text-align: center; 
 }
 
 .gradient-orbs {
@@ -689,14 +724,15 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
 .library-item__illustration img {
   display: flex;
   flex: 1;
-  width: 120px;
+  width: 130px;
 }
 
 .library-item__detail {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+  overflow: hidden;
 }
 
 .library-item__title {
@@ -708,14 +744,18 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-height: 200px;
 }
 
 .library-item__desc {
-  max-height: 50px;
-  overflow: hidden;
+  max-height: 30px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+
+.library-item__date {
+  margin: 0;
 }
 
 .library-item__footer {
@@ -727,7 +767,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
 }
 
 .library-item__footer span {
-  color: var(--purple-light);
+  color: var(--purple-lightest);
 }
 
 .library-item__buttons {
@@ -743,6 +783,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   border: none;
   border-radius: 999px;
   cursor: pointer;
+  text-decoration: none;
 
   transition: all 150ms ease-in-out;
 }
@@ -892,7 +933,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
 
 .about-page .about-content h1,
 .about-page .about-content h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   padding-bottom: 20px;
   font-weight: bold;
 }
@@ -954,7 +995,7 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
 
 /* START OF SUMMARY PAGE */
 
-.summary-tool-container {
+.summary-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -964,7 +1005,31 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   background-color: var(--blue-darkest);
 }
 
-.summary-tool {
+#summary-detail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* .summary-container .section-header .section-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.summary-container .section-header .section-title i {
+  font-size: 1.5rem;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+}
+
+.summary-container .section-header .section-title i:hover {
+  color: var(--blue-light);
+} */
+
+.summary-container {
   display: flex;
   gap: 10px;
   justify-content: center;
@@ -972,13 +1037,13 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   width: 100%;
 }
 
-.summary-tool__right-col {
+.summary-col {
   width: 100%;
   max-width: 1000px;
   margin-bottom: 12px;
 }
 
-.summary-tool__top {
+.summary__top {
   display: flex;
   align-items: center;
   padding: 10px 20px;
@@ -990,30 +1055,30 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   width: 100%;
 }
 
-.summary-tool__top p {
+.summary__top p {
   margin: 0;
 }
 
-.summary-tool__bottom {
+.summary__bottom {
   padding: 20px;
   border-radius: 20px;
   background-color: var(--blue-lightest);
   width: 100%;
 }
 
-.summary-tool_bottom_buttons {
+.summary__bottom__buttons {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.summary-form .summary-tool_bottom_buttons .summary-tool_button_left {
+.summary-form .summary__bottom__buttons .summary__button__left {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.summary-tool_button_right .delete__button {
+.summary__button__right .delete__button {
   background-color: red;
   border: none;
   border-radius: 999px;
@@ -1027,16 +1092,16 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   transition: all 150ms ease-in-out;
 }
 
-.summary-tool_button_right .delete__button {
+.summary__button__right .delete__button {
   background-image: none;
   background-color: red;
 }
 
-.summary-tool_button_right .delete__button:hover {
+.summary__button__right .delete__button:hover {
   background-color: rgb(189, 0, 0);
 }
 
-.summary-tool_button_right .delete__button i,
+.summary__button__right .delete__button i,
 .edit__button i {
   margin-right: 10px;
 }
@@ -1067,10 +1132,6 @@ a.summary-btn {
 
 .summary-form textarea:focus-visible {
   outline: none;
-}
-
-.summary-tool_file_input {
-  display: none;
 }
 
 /* END OF SUMMARY PAGE */

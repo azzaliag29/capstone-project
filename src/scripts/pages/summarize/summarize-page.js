@@ -1,4 +1,12 @@
+import SummarizePresenter from "./summarize-presenter";
+import * as SummaryAPI from "../../data/api";
+
 export default class SummarizePage {
+  #presenter = null;
+  #form = null;
+  #uploadedContent = null;
+  #maxFileSize = 1048576 * 10;
+
   async render() {
     return `
       <section class="summarize-tool-container container">
@@ -12,9 +20,9 @@ export default class SummarizePage {
             <div class="summarize-tool__top">
               <div class="language-selector">
                 <label for="language"><i class="fa-solid fa-globe"></i></label>
-                <select name="language" id="language" class="language-selector__button">
-                  <option value="indonesia">Indonesia</option>
-                  <option value="english">English</option>
+                <select name="language" id="language" class="language-selector__button" form="summarize-input-form">
+                  <option value="id" selected>Indonesian</option>
+                  <option value="en">English</option>
                 </select>
               </div>
             </div>
@@ -25,13 +33,16 @@ export default class SummarizePage {
                 id="text-input"
                 name="text"
                 placeholder="Upload a PDF file or directly write or paste your text in this section. Whenever you’re ready, just click “Summarize”. Your summary will come out within a minute!"
-                required
+                minlength="50"
                 ></textarea>
+
+                <div id="file-preview" hidden>
+                  <img src="images/file-illustration2.svg" alt="File illustration">
+                </div>
 
                 <div class="summarize-tool__bottom__buttons">
                   <div class="summarize-tool__button__left">
-                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
-                    <button id="input-button" class="summarize-btn" type="button">Upload PDF</button>
+                    <button id="input-button" class="summarize-btn" type="button"><i class="fa-solid fa-arrow-up-from-bracket"></i>Upload PDF</button>
                     <input
                       id="file-input"
                       class="summarize-tool__file__input"
@@ -52,11 +63,7 @@ export default class SummarizePage {
           <div class="summarize-tool__right-col">
             <div class="summarize-tool__top">
               <p>Keywords:</p>
-              <div class="keywords-buttons">
-                <button class="keywords-button" type="button">Keyword 1</button>
-                <button class="keywords-button" type="button">Keyword 2</button>
-                <button class="keywords-button" type="button">Keyword 3</button>
-              </div>
+              <div class="keywords-buttons"></div>
             </div>
 
             <div class="summarize-tool__bottom">
@@ -70,19 +77,12 @@ export default class SummarizePage {
 
                 <div class="summarize-tool__bottom__buttons">
                   <div class="summarize-tool__button__left">
-                    <div class="download-button-container">
-                      <i class="fa-solid fa-download"></i>
-                      <a href="" download="summary.txt" id="download-button" class="summarize-btn">Download</a>
-                    </div>
-
-                    <div class="copy-button-container">
-                      <i class="fa-solid fa-copy"></i>
-                      <button id="copy-button" class="summarize-btn" type="button">Copy</button>
-                    </div>
+                    <a href="" download="summary.txt" id="download-button" class="summarize-btn"><i class="fa-solid fa-download"></i>Download</a>
+                    <button id="copy-button" class="summarize-btn" type="button"><i class="fa-solid fa-copy"></i>Copy</button>
                   </div>
 
                   <div class="summarize-tool__button__right">
-                    <button id="save-button" class="save__button primary-btn" type="submit">Save to library</button>
+                    <a href="#/library" id="view-button" class="view__button primary-btn">View in library</a>
                   </div>
                 </div>
               </form>
@@ -165,5 +165,130 @@ export default class SummarizePage {
     `;
   }
 
-  async afterRender() {}
+  async afterRender() {
+    this.#presenter = new SummarizePresenter({
+      view: this,
+      model: SummaryAPI,
+    });
+    this.#uploadedContent;
+
+    this.#setupInputForm();
+    this.#setupOutputForm();
+  }
+
+  #setupInputForm() {
+    this.#form = document.getElementById("summarize-input-form");
+    const textInput = document.getElementById("text-input");
+    const fileInput = document.getElementById("file-input");
+    const inputButton = document.getElementById("input-button");
+    const filePreview = document.getElementById("file-preview");
+
+    this.#form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const textInputValue = textInput.value.trim();
+      const fileInputValue = fileInput.files[0];
+
+      const languageSelector = document.getElementById("language");
+
+      if (!textInputValue && !fileInputValue) {
+        return alert("Please upload a file or enter text.");
+      }
+
+      if (fileInputValue && fileInputValue.size > this.#maxFileSize) {
+        return alert("File size exceeds the maximum limit of 10MB.");
+      }
+
+      this.#uploadedContent = fileInputValue ? fileInputValue : textInputValue;
+      textInput.disabled = !!fileInputValue;
+
+      const data = {
+        language: languageSelector.value,
+        originalContent: this.#uploadedContent,
+      };
+      await this.#presenter.createNewSummary(data);
+    });
+
+    inputButton.addEventListener("click", () => {
+      fileInput.click();
+    });
+
+    fileInput.addEventListener("change", () => {
+      const hasFile = fileInput.files.length > 0;
+
+      if (!hasFile) {
+        this.clearForm();
+        return;
+      }
+
+      filePreview.hidden = true;
+      setTimeout(() => {
+        filePreview.hidden = false;
+      }, 300);
+
+      textInput.disabled = true;
+      textInput.placeholder = "";
+    });
+
+    filePreview.addEventListener("click", () => {
+      this.clearForm();
+    });
+  }
+
+  #setupOutputForm() {
+    const copyButton = document.getElementById("copy-button");
+    const downloadButton = document.getElementById("download-button");
+    const outputTextArea = document.getElementById("text-output");
+
+    copyButton.addEventListener("click", () => {
+      navigator.clipboard.writeText(outputTextArea.value).then(() => {
+        alert("Summary copied to clipboard!");
+      });
+    });
+
+    downloadButton.addEventListener("click", () => {
+      const blob = new Blob([outputTextArea.value], {type: "text/plain"});
+      const url = URL.createObjectURL(blob);
+      downloadButton.href = url;
+    });
+  }
+
+  updateOutput(summary, keywords) {
+    const outputTextArea = document.getElementById("text-output");
+    outputTextArea.value = summary;
+
+    const keywordContainer = document.querySelector(".keywords-buttons");
+    keywordContainer.innerHTML = "";
+
+    keywords.forEach((keyword) => {
+      const encodedKeyword = encodeURIComponent(keyword);
+      const keywordButton = document.createElement("a");
+      keywordButton.className = "keywords-button";
+      keywordButton.href = `https://scholar.google.com/scholar?q=${encodedKeyword}`;
+      keywordButton.textContent = keyword;
+      keywordContainer.appendChild(keywordButton);
+    });
+  }
+
+  createSuccessfully(message) {
+    alert(message);
+    console.log(message);
+    this.clearForm();
+  }
+
+  createFailed(message) {
+    alert(message);
+  }
+
+  clearForm() {
+    this.#form.reset();
+
+    const textInput = this.#form.elements.namedItem("text-input");
+    const filePreview = document.getElementById("file-preview");
+    
+    textInput.disabled = false;
+    textInput.placeholder =
+      "Upload a PDF file or directly write or paste your text in this section. Whenever you’re ready, just click “Summarize”. Your summary will come out within a minute!";
+    filePreview.hidden = true;
+  }
 }

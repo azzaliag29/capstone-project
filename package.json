@@ -6,7 +6,9 @@
     "build": "webpack --config webpack.prod.js",
     "start-dev": "webpack serve --config webpack.dev.js",
     "serve": "http-server dist",
-    "write": "npx prettier --write ."
+    "write": "npx prettier --write .",
+    "lint": "eslint ./src",
+    "fix": "eslint ./src --fix"
   },
   "keywords": [],
   "author": "YOUR_NAME <yourmail@mail.com>",
@@ -20,7 +22,7 @@
     "css-loader": "^7.1.2",
     "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-prettier": "^5.4.1",
     "globals": "^16.2.0",
     "html-webpack-plugin": "^5.6.3",
     "http-server": "^14.1.1",
