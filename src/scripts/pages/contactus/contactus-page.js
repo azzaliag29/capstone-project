@@ -7,7 +7,7 @@ export default class ContactUsPage {
 
   async render() {
     return `
-      <section class="contactus-container">
+      <section class="contactus-container global-container">
         <div class="section-header">
           <h1 class="section-title">Talk To Our Team</h1>
           <p>Need help? Our team is just a step away</p>

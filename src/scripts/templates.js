@@ -31,7 +31,7 @@ export function generateUnauthenticatedNavigationListTemplate() {
     </ul>
 
     <ul class="navbar-right-links">
-      <li id="login-button"><a href="#/login">Login</a></li>
+      <li id="login-button"><i class="fa-solid fa-arrow-right-to-bracket"></i><a href="#/login">Login</a></li>
     </ul>
   `;
 }

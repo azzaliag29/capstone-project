@@ -11,7 +11,7 @@ export default class LibraryPage {
 
   async render() {
     return `
-      <section class="library-container container">
+      <section class="library-container global-container">
         <div class="section-header">
           <h1 class="section-title">My Library</h1>
           <p>All of the saved summary will be stored in here</p>

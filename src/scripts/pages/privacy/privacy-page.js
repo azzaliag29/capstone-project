@@ -1,7 +1,7 @@
 export default class PrivacyPage {
   async render() {
     return `
-      <section class="privacy">
+      <section class="privacy global-container">
         <div class="privacy-text">
           <div class="title-privacy">
             <h2>Privacy Policy</h2>

@@ -9,7 +9,7 @@ export default class SummaryPage {
 
   async render() {
     return `
-      <section class="summary-container container">
+      <section class="summary-container global-container">
         <div id="summary-detail"></div>
       </section>
 

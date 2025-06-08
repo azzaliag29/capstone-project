@@ -9,7 +9,7 @@ export default class SummarizePage {
 
   async render() {
     return `
-      <section class="summarize-tool-container container">
+      <section class="summarize-tool-container global-container">
         <div class="section-header">
           <h1 class="section-title">Study Smarter with AI Summarizer</h1>
           <p>Simplify your study material into clear summaries</p>

@@ -1,7 +1,7 @@
 export default class TermsPage {
   async render() {
     return `
-      <section class="terms">
+      <section class="terms global-container">
         <div class="terms-text">
           <div class="title-terms">
             <h2>Terms of Use</h2>

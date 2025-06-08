@@ -1,7 +1,7 @@
 export default class HomePage {
   async render() {
     return `
-      <section class="home-page">
+      <section class="home-page global-container">
         <div class="about-section-container">
 
           <div class="about-text">

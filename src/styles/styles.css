@@ -24,7 +24,6 @@
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--blue-darkest);
-  padding: 80px 80px 16px 80px; /* mark */
 }
 
 .primary-btn {
@@ -51,10 +50,8 @@ body {
   box-shadow: 0 0 0 2px var(--blue);
 }
 
-.container {
-  padding-inline: 20px;
-  margin-inline: auto;
-  max-width: 1300px;
+.global-container {
+  padding: 80px 80px 16px 80px;
 }
 
 .section-header {
@@ -141,6 +138,10 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.navbar-right-links i {
+  margin-right: 15px;
 }
 
 .navbar-right-links li a {
@@ -874,7 +875,6 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 0;
 }
 
 .cu-title {
@@ -1207,6 +1207,7 @@ a.summary-btn {
 /* START OF TERMS PAGE */
 .terms, .privacy {
   color: white;
+  margin-top: 50px;
 }
 /* END OF TERMS PAGE */
 
@@ -1217,7 +1218,9 @@ footer.footer {
   flex-wrap: wrap;
   background-color: #0D1E4A;
   color: #FFFFFF;
-  padding: 30px 30px;
+  margin-inline: 80px;
+  padding: 30px 0px;
+  margin-top: 50px;
   font-family: 'Inter', sans-serif;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
