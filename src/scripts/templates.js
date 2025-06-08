@@ -1,5 +1,41 @@
 import { showFormattedDate } from "./utils";
 
+export function generateAuthenticatedNavigationListTemplate() {
+  return `
+    <div class="navbar-logo"><strong>Quibly</strong></div>
+
+      <ul class="navbar-center-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="#/library">Library</a></li>
+        <li><a href="#/summarize">Summarize Tool</a></li>
+        <li><a href="#/about">About</a></li>
+        <li><a href="#/contactus">Contact Us</a></li>
+      </ul>
+
+      <ul class="navbar-right-links">
+        <li id="logout-button"><i class="fa-solid fa-arrow-right-to-bracket"></i><a href="#/login">Log out</a></li>
+      </ul>
+  `;
+}
+
+export function generateUnauthenticatedNavigationListTemplate() {
+  return `
+    <div class="navbar-logo"><strong>Quibly</strong></div>
+
+    <ul class="navbar-center-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="#/library">Library</a></li>
+      <li><a href="#/summarize">Summarize Tool</a></li>
+      <li><a href="#/about">About</a></li>
+      <li><a href="#/contactus">Contact Us</a></li>
+    </ul>
+
+    <ul class="navbar-right-links">
+      <li id="login-button"><a href="#/login">Login</a></li>
+    </ul>
+  `;
+}
+
 export function generateSummaryItemTemplate({
   id,
   title,

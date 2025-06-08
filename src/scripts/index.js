@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     drawerButton: document.querySelector("#drawer-button"),
     navigationDrawer: document.querySelector("#navigation-drawer"),
     navbar: document.querySelector("nav"),
+    footer: document.querySelector("footer"),
   });
   await app.renderPage();
 

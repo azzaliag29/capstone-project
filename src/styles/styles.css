@@ -46,10 +46,7 @@ body {
   color: black;
 }
 
-input:focus-visible,
-select:focus-visible,
-button:focus-visible,
-a:focus-visible {
+*:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px var(--blue);
 }
@@ -202,6 +199,13 @@ a:focus-visible {
   width: 400px;
   height: 400px;
   object-fit: contain;
+}
+
+.about-text__title {
+  font-size: 4.8rem;
+  margin-bottom: 1.5rem;
+  padding-top: 10%;
+  white-space: nowrap;
 }
 
 .flash {
@@ -411,6 +415,19 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.4);
+}
+
+.checkbox-control {
+  display: flex;
+  gap: 12px;
+}
+
+.checkbox-control a {
+  color: var(--purple-light);
 }
 
 .auth-form-control label {
@@ -1186,6 +1203,12 @@ a.summary-btn {
 }
 
 /* BOOTSTRAP OVERRIDE */
+
+/* START OF TERMS PAGE */
+.terms, .privacy {
+  color: white;
+}
+/* END OF TERMS PAGE */
 
 /*FOOTER*/
 footer.footer {

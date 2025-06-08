@@ -5,7 +5,7 @@ export default class HomePage {
         <div class="about-section-container">
 
           <div class="about-text">
-            <h1 class="section-title">Summarize Long Text</h1>
+            <h1 class="about-text__title">Summarize Long Text</h1>
             <h2 class="flash"> In a <strong>flash</strong></h2>
 
             <p class="subtext">

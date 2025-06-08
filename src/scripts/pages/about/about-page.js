@@ -31,7 +31,5 @@ export default class AboutPage {
     `;
   }
 
-  async afterRender() {
-    console.log("AboutPage Rendered!");
-  }
+  async afterRender() {}
 }

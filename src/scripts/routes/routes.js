@@ -6,16 +6,21 @@ import ContactUs from "../pages/contactus/contactus-page";
 import SummaryPage from "../pages/summary/summary-page";
 import SummarizePage from "../pages/summarize/summarize-page";
 import LibraryPage from "../pages/library/library-page";
+import PrivacyPage from "../pages/privacy/privacy-page";
+import TermsPage from "../pages/terms/terms-page";
+import { checkAuthenticatedRouteOnly, checkUnauthenticatedRouteOnly } from "../utils/auth";
 
 const routes = {
-  "/": new HomePage(),
-  "/about": new AboutPage(),
-  "/login": new LoginPage(),
-  "/register": new RegisterPage(),
-  "/contactus": new ContactUs(),
-  "/summaries/:id": new SummaryPage(),
-  "/summarize": new SummarizePage(),
-  "/library": new LibraryPage(),
+  "/": () => new HomePage(),
+  "/about": () => new AboutPage(),
+  "/login": () => checkUnauthenticatedRouteOnly(new LoginPage()),
+  "/register": () => checkUnauthenticatedRouteOnly(new RegisterPage()),
+  "/contactus": () => new ContactUs(),
+  "/summaries/:id": () => checkAuthenticatedRouteOnly(new SummaryPage()),
+  "/summarize": () => checkAuthenticatedRouteOnly(new SummarizePage()),
+  "/library": () => checkAuthenticatedRouteOnly(new LibraryPage()),
+  "/privacy": () => new PrivacyPage(),
+  "/terms": () => new TermsPage(),
 };
 
 export default routes;

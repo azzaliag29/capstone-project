@@ -26,6 +26,9 @@ export default class LibraryPresenter {
 
   async deleteButtonHandler(id) {
     try {
+      const confirmed = confirm("Are you sure you want to delete this summary?");
+      if (!confirmed) return;
+      
       const response = await this.#model.deleteSummaryById(id);
     
       if (!response.ok) {
