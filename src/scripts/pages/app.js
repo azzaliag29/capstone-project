@@ -5,13 +5,16 @@ class App {
   #content = null;
   #drawerButton = null;
   #navigationDrawer = null;
+  #navbar = null;
 
-  constructor({ navigationDrawer, drawerButton, content }) {
+  constructor({ navigationDrawer, drawerButton, content, navbar }) {
     this.#content = content;
     this.#drawerButton = drawerButton;
     this.#navigationDrawer = navigationDrawer;
+    this.#navbar = navbar;
 
-    this._setupDrawer();
+    /* this._setupDrawer(); */
+    this.#setupNavigation();
   }
 
   _setupDrawer() {
@@ -32,6 +35,18 @@ class App {
           this.#navigationDrawer.classList.remove("open");
         }
       });
+    });
+  }
+
+  #setupNavigation() {
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 10) {
+        this.#navbar.classList.add("scrolled");
+      } else {
+        this.#navbar.classList.remove("scrolled");
+      }
     });
   }
 

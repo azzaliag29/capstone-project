@@ -1,4 +1,8 @@
 @media screen and (max-width: 1000px) {
+  body {
+    padding: 60px 50px 10px 50px; 
+  }
+
   .auth-container {
     grid-template-columns: 1fr 2fr;
   }
@@ -25,6 +29,10 @@
 }
 
 @media screen and (max-width: 800px) {
+  body {
+    padding: 40px 20px 10px 20px; 
+  }
+
   .auth-container {
     grid-template-columns: 1fr;
   }
@@ -80,5 +88,18 @@
 
   .library-item__buttons {
     margin-left: auto;
+  }
+
+  footer.footer {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .footer-section {
+    margin: 15px 0;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
   }
 }
