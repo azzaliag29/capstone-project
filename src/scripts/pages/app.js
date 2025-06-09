@@ -6,34 +6,37 @@ import { getAccessToken, getLogout } from "../utils/auth";
 class App {
   #content = null;
   #drawerButton = null;
-  #navigationDrawer = null;
+  #drawerNavigation = null;
   #navbar = null;
   #footer = null;
 
-  constructor({ navigationDrawer, drawerButton, content, navbar, footer }) {
+  constructor({ content, navbar, footer }) {
     this.#content = content;
-    this.#drawerButton = drawerButton;
-    this.#navigationDrawer = navigationDrawer;
     this.#navbar = navbar;
     this.#footer = footer;
   }
 
-  _setupDrawer() {
+  #setupDrawer() {
+    this.#drawerButton = document.querySelector("#drawer-button");
+    this.#drawerNavigation = document.querySelector(".navbar-links");
+
     this.#drawerButton.addEventListener("click", () => {
-      this.#navigationDrawer.classList.toggle("open");
+      this.#drawerNavigation.classList.toggle("open");
     });
 
     document.body.addEventListener("click", (event) => {
-      if (
-        !this.#navigationDrawer.contains(event.target) &&
-        !this.#drawerButton.contains(event.target)
-      ) {
-        this.#navigationDrawer.classList.remove("open");
+      const isTargetInsideDrawer = this.#drawerNavigation.contains(
+        event.target
+      );
+      const isTargetInsideButton = this.#drawerButton.contains(event.target);
+
+      if (!(isTargetInsideDrawer || isTargetInsideButton)) {
+        this.#drawerNavigation.classList.remove("open");
       }
 
-      this.#navigationDrawer.querySelectorAll("a").forEach((link) => {
+      this.#drawerNavigation.querySelectorAll("a").forEach((link) => {
         if (link.contains(event.target)) {
-          this.#navigationDrawer.classList.remove("open");
+          this.#drawerNavigation.classList.remove("open");
         }
       });
     });
@@ -96,6 +99,7 @@ class App {
     await page.afterRender();
 
     this.#setupNavigation();
+    this.#setupDrawer();
   }
 }
 

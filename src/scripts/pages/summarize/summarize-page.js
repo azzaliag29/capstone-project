@@ -93,7 +93,7 @@ export default class SummarizePage {
         <div class="gradient-orbs"></div>
       </section>
 
-      <section class="faq-container container">
+      <section class="faq-container">
         <div class="section-header">
           <h1 class="section-title">Frequently Asked Questions</h1>
           <p>Here are the most asked question by our user</p>

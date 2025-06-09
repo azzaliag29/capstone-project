@@ -4,6 +4,7 @@ export function generateAuthenticatedNavigationListTemplate() {
   return `
     <div class="navbar-logo"><strong>Quibly</strong></div>
 
+    <div class="navbar-links">
       <ul class="navbar-center-links">
         <li><a href="/">Home</a></li>
         <li><a href="#/library">Library</a></li>
@@ -15,6 +16,9 @@ export function generateAuthenticatedNavigationListTemplate() {
       <ul class="navbar-right-links">
         <li id="logout-button"><i class="fa-solid fa-arrow-right-to-bracket"></i><a href="#/login">Log out</a></li>
       </ul>
+    </div>
+
+    <button id="drawer-button" class="drawer-button">☰</button>
   `;
 }
 
@@ -33,6 +37,8 @@ export function generateUnauthenticatedNavigationListTemplate() {
     <ul class="navbar-right-links">
       <li id="login-button"><i class="fa-solid fa-arrow-right-to-bracket"></i><a href="#/login">Login</a></li>
     </ul>
+
+    <button id="drawer-button" class="drawer-button">☰</button>
   `;
 }
 
