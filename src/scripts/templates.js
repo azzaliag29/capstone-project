@@ -1,5 +1,15 @@
 import { showFormattedDate } from "./utils";
 
+
+export function generateLoaderTemplate() {
+  return `
+    <div class="loader">
+      <div class="loader-spinner" aria-hidden="true"></div>
+      <p class="loader-text">Loading, please wait...</p>
+    </div>
+  `
+}
+
 export function generateAuthenticatedNavigationListTemplate() {
   return `
     <div class="navbar-logo"><strong>Quibly</strong></div>
@@ -51,7 +61,7 @@ export function generateSummaryItemTemplate({
   return `
       <div tabindex="0" class="library-item" data-libraryid="${id}">
         <div class="library-item__illustration">
-          <img src="images/file-illustration.png" alt="File illustration">
+          <img src="images/file-illustration.webp" alt="File illustration">
         </div>
 
         <div class="library-item__detail">
@@ -132,13 +142,11 @@ export function generateSummaryDetailTemplate({
           <div class="summary__bottom__buttons">
             <div class="summary__button__left">
               <div class="download-button-container">
-                <i class="fa-solid fa-download"></i>
-                <a href="" download="summary.txt" id="download-button" class="summary-btn">Download</a>
+                <a href="" download="summary.txt" id="download-button" class="summary-btn"><i class="fa-solid fa-download"></i>Download</a>
               </div>
 
               <div class="copy-button-container">
-                <i class="fa-solid fa-copy"></i>
-                <button id="copy-button" class="summary-btn" type="button">Copy</button>
+                <button id="copy-button" class="summary-btn" type="button"><i class="fa-solid fa-copy"></i>Copy</button>
               </div>
             </div>
 

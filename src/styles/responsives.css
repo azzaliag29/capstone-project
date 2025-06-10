@@ -1,10 +1,10 @@
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1045px) {
   .navbar {
     padding: 15px 60px;
   }
 
   .global-container {
-    padding: 80px 60px 16px 60px;
+    padding: 80px 60px 0px 60px;
   }
 
   .drawer-button {
@@ -29,7 +29,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 60px 80px;
+    padding: 120px 60px;
     background-color: var(--blue-darkest);
     transform: translateY(-100%);
     opacity: 0;
@@ -77,6 +77,18 @@
     width: 100%;
   }
 
+  .cta-container {
+    padding: 20px 60px 0px 60px;
+  }
+
+  .simplify-text-container {
+    gap: 40px;
+  }
+
+  .simplify-text-container .simplify-text-container__right-col img {
+    width: 300px;
+  }
+
   footer.footer {
     margin-inline: 60px;
   }
@@ -86,9 +98,13 @@
   .navbar {
     padding: 15px 30px;
   }
+  
+  .navbar-links {
+    padding: 120px 30px;
+  }
 
   .global-container {
-    padding: 80px 30px 16px 30px;
+    padding: 80px 30px 0px 30px;
   }
 
   .auth-container {
@@ -100,7 +116,7 @@
   }
 
   .about-page .about-container {
-    padding: 20px; /* Reduced padding for smaller screens */
+    padding: 20px;
   }
 
   .summarize-tool-container {
@@ -118,16 +134,36 @@
   .about-page .about-header,
   .about-page .about-content,
   .about-page .simplify-text-container {
-    padding: 20px; /* Adjusted padding for mobile screens */
+    padding: 20px;
   }
 
-  /* Styling for the image inside "Let’s Simplify Your Text" section */
+  .simplify-text-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .simplify-text-container .simplify-text-container__left-col a {
+    margin: 0 auto;
+  }
+
+  .simplify-text-container__right-col {
+    order: -1;
+  }
+
   .simplify-text-container .simplify-text-container__right-col img {
-    display: none;
+    width: 350px;
   }
 
   .about-page .simplify-text-container {
     gap: 0px;
+  }
+
+  .cta-container {
+    padding: 20px 30px 0px 30px;
+  }
+
+  #contact-form button {
+    width: 60%;
   }
 
   footer.footer {
@@ -147,6 +183,10 @@
 
   .section-title {
     font-size: 1.8rem;
+  }
+
+  .summarize-form #file-preview img {
+    width: 120px;
   }
 
   .faq-item__title h2 {
@@ -169,8 +209,99 @@
     margin-left: auto;
   }
 
+  .about-page .about-content h1,
+  .about-page .about-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .simplify-text-container .simplify-text-container__right-col img {
+    width: 300px;
+  }
+
+  .simplify-text-container .simplify-text-container__left-col h2 {
+    font-size: 1.8rem;
+  }
+
+  .summary__bottom__buttons {
+    gap: 10px;
+  }
+
+  .summarize-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .summary-btn {
+    font-size: 0px;
+    line-height: 0;
+  }
+
+  .summary-btn i {
+    font-size: 1.5rem;
+  }
+
+
+  .summary__button__right .delete__button ,
+  .edit__button {
+    font-size: 0;
+    line-height: 0;
+  }
+
+  .delete__button i,
+  .edit__button i {
+    font-size: 1.2rem;
+  }
+
+  .summary__button__right .delete__button i,
+  .edit__button i {
+    margin-right: 0;
+  }
+
+  .summary__button__right .delete__button, .edit__button {
+    border-radius: 999px;
+    padding: 15px 17px;
+    min-width: 0px;
+  }
+
+  .contact-us-bg {
+    height: 0;
+  }
+
   .gradient-image {
-    height: 80%;
+    height: 0;
+  }
+
+  .gradient-orbs {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .faq-bg {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .loader-text {
+    font-size: 1.2rem; 
+  }
+  
+  .loader-spinner {
+    width: 42px;
+    height: 42px;
+  }
+
+  .form-input-container input {
+    padding: 12px 25px 12px 60px;
+  }
+
+  .cu-form-group input,
+  .cu-form-group textarea {
+    padding: 10px 22px;
+  }
+
+  #contact-form button {
+    width: 100%;
   }
 }
 
@@ -179,8 +310,16 @@
     padding: 10px 25px;
   }
 
+  .navbar-links {
+    padding: 120px 25px;
+  }
+
   .global-container {
-    padding: 80px 25px 16px 25px;
+    padding: 80px 25px 0px 25px;
+  }
+
+  .cta-container {
+    padding: 20px 25px 0px 25px;
   }
 
   .section-header {
@@ -195,18 +334,23 @@
 
   .summarize-btn {
     font-size: 0px;
+    line-height: 0;
   }
 
   .summarize-btn i {
     font-size: 1.5rem;
   }
 
-  .summarize-form textarea {
-    height: 180px;
+  .summarize-form textarea, .summary-form textarea {
+    height: 200px;
   }
 
-  .section-title {
-    font-size: 2rem;
+  .summarize-form #file-preview {
+    height: 185px;
+  }
+
+  .summarize-form #file-preview img {
+    width: 100px;
   }
 
   .library-item__title {
@@ -223,10 +367,19 @@
     flex-shrink: 0;
   }
 
+  .cu-form-wrapper {
+    padding: 30px;
+  }
+
+  .cu-form-group:last-of-type {
+    margin-bottom: 25px;
+  }
+
   footer.footer {
     justify-content: flex-start;
+    align-items: center;
     flex-direction: column;
-    margin-inline: 25px;
+    text-align: center;
   }
 
   .footer-section.brand .copyright {

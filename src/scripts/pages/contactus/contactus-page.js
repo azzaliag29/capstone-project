@@ -1,5 +1,6 @@
 import ContactUsPresenter from "./contactus-presenter";
 import * as SummaryAPI from "../../data/api";
+import { generateLoaderTemplate } from "../../templates";
 
 export default class ContactUsPage {
   #presenter = null;
@@ -17,11 +18,11 @@ export default class ContactUsPage {
           <form id="contact-form">
             <div class="cu-form-group">
               <label for="name-input">Name</label>
-              <input id="name-input" type="text" name="name" placeholder="Your Name" />
+              <input id="name-input" type="text" name="name" placeholder="Enter your name" />
             </div>
             <div class="cu-form-group">
               <label for="email-input">Email</label>
-              <input id="email-input" type="email" name="email" placeholder="your@email.com" />
+              <input id="email-input" type="email" name="email" placeholder="Example: your@email.com" />
             </div>
             <div class="cu-form-group">
               <label for="message-input">Your Message</label>
@@ -32,6 +33,9 @@ export default class ContactUsPage {
             </button>
           </form>
         </div>
+
+        <div id="loading-container"></div>
+        <div class="contact-us-bg"></div>
       </section>
     `;
   }
@@ -70,4 +74,13 @@ export default class ContactUsPage {
   showError(message) {
     alert(message);
   }
+
+  showLoading() {
+      document.getElementById("loading-container").innerHTML =
+        generateLoaderTemplate();
+    }
+  
+    hideLoading() {
+      document.getElementById("loading-container").innerHTML = "";
+    }
 }

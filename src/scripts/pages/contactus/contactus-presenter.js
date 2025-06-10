@@ -8,6 +8,8 @@ export default class ContactUsPresenter {
   }
 
   async submitContactForm(formData) {
+    this.#view.showLoading();
+
     try {
       if (!formData.name || !formData.email || !formData.message) {
         this.#view.showError("Please fill in all fields.");
@@ -26,6 +28,8 @@ export default class ContactUsPresenter {
     } catch (error) {
       console.error("submitContactForm: error:", error);
       this.#view.showError(error.message);
+    } finally {
+      this.#view.hideLoading();
     }
   }
 }

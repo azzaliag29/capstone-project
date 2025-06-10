@@ -11,6 +11,8 @@ export default class SummaryPresenter {
 
   // Function to fetch and display summary by ID
   async getSummaryById() {
+    this.#view.showLoading();
+
     try {
       const response = await this.#model.getSummaryById(this.#summaryId);
 
@@ -27,11 +29,15 @@ export default class SummaryPresenter {
     } catch (error) {
       console.error("getSummaryById: error:", error);
       this.#view.showError(error.message);
+    } finally {
+      this.#view.hideLoading();
     }
   }
 
   // Function to edit summary by ID
   async editSummaryById({ title, summary }) {
+    this.#view.showLoading();
+
     try {
       const data = {
         title: title,
@@ -51,11 +57,15 @@ export default class SummaryPresenter {
     } catch (error) {
       console.error("editSummaryById: error:", error);
       this.#view.showError(error.message);
+    } finally {
+      this.#view.hideLoading();
     }
   }
 
   // Function to delete summary by ID
   async deleteSummaryById() {
+    this.#view.showLoading();
+
     try {
       const response = await this.#model.deleteSummaryById(this.#summaryId);
 
@@ -71,6 +81,8 @@ export default class SummaryPresenter {
     } catch (error) {
       console.error("deleteSummaryById: error:", error);
       this.#view.showError(error.message);
+    } finally {
+      this.#view.hideLoading();
     }
   }
 }

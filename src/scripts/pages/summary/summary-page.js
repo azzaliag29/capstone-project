@@ -1,6 +1,6 @@
 import SummaryPresenter from "./summary-presenter";
 import * as SummaryAPI from "../../data/api";
-import { generateSummaryDetailTemplate } from "../../templates";
+import { generateLoaderTemplate, generateSummaryDetailTemplate } from "../../templates";
 import { parseActivePathname } from "../../routes/url-parser";
 
 export default class SummaryPage {
@@ -11,15 +11,16 @@ export default class SummaryPage {
     return `
       <section class="summary-container global-container">
         <div id="summary-detail"></div>
+        <div id="loading-container"></div>
       </section>
 
       <section>
-        <div class="cta-container container">
+        <div class="cta-container">
           <div class="simplify-text-container">
             <div class="simplify-text-container__left-col">
-              <h3>Let’s Simplify Your Text</h3>
+              <h2>Let’s Simplify Your Text</h2>
               <p>Quickly transform long content into clear and concise summaries. Ideal for essays, blogs, or research articles to help you focus on what matters.</p>
-              <a href="#/summarize" class="primary-btn">Try Now For Free</a>
+              <a href="#/summarize" class="primary-btn">Try Now For Free<i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="simplify-text-container__right-col">
               <img src="images/cta-image.png" alt="Simplify Text" class="simplify-image">
@@ -127,5 +128,14 @@ export default class SummaryPage {
 
   clearSummary() {
     this.#form.reset();
+  }
+
+  showLoading() {
+    document.getElementById("loading-container").innerHTML =
+      generateLoaderTemplate();
+  }
+    
+  hideLoading() {
+    document.getElementById("loading-container").innerHTML = "";
   }
 }

@@ -1,6 +1,7 @@
 import LibraryPresenter from "./library-presenter";
 import * as SummaryAPI from "../../data/api";
 import {
+  generateLoaderTemplate,
   generateSummaryItemTemplate,
   generateSummaryListEmptyTemplate,
   generateSummaryListErrorTemplate,
@@ -19,6 +20,7 @@ export default class LibraryPage {
 
         <div id="library-list" class="library-list"></div>
 
+        <div id="loading-container"></div>
         <div class="gradient-image"></div>
       <section>
     `;
@@ -74,6 +76,15 @@ export default class LibraryPage {
         this.#presenter.deleteButtonHandler(libraryItemId);
       })
     })
+  }
+
+  showLoading() {
+    document.getElementById("loading-container").innerHTML =
+      generateLoaderTemplate();
+    }
+  
+  hideLoading() {
+    document.getElementById("loading-container").innerHTML = "";
   }
 }
 

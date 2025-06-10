@@ -15,12 +15,12 @@ export default class AboutPage {
       </section>
           
       <section>
-        <div class="cta-container container">
+        <div class="cta-container">
           <div class="simplify-text-container">
             <div class="simplify-text-container__left-col">
-              <h3>Let’s Simplify Your Text</h3>
+              <h2>Let’s Simplify Your Text</h2>
               <p>Quickly transform long content into clear and concise summaries. Ideal for essays, blogs, or research articles to help you focus on what matters.</p>
-              <a href="#/summarize" class="primary-btn">Try Now For Free</a>
+              <a href="#/summarize" class="primary-btn">Try Now For Free<i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="simplify-text-container__right-col">
               <img src="images/cta-image.png" alt="Simplify Text" class="simplify-image">

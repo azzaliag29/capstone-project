@@ -1,3 +1,5 @@
+import { sleep } from "../../utils";
+
 export default class SummarizePresenter {
   #view;
   #model;
@@ -8,6 +10,9 @@ export default class SummarizePresenter {
   }
 
   async createNewSummary({ language, originalContent }) {
+    this.#view.showLoading();
+    await sleep(2000);
+
     try {
       const data = {
         language: language,
@@ -29,6 +34,8 @@ export default class SummarizePresenter {
     } catch (error) {
       console.error("createNewSummary: error:", error);
       this.#view.createFailed(error.message);
+    } finally {
+      this.#view.hideLoading();
     }
   }
 }

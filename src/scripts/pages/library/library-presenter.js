@@ -8,6 +8,8 @@ export default class LibraryPresenter {
   }
 
   async initialGallery() {
+    this.#view.showLoading();
+
     try {
       const response = await this.#model.getAllSummaries();
 
@@ -21,10 +23,14 @@ export default class LibraryPresenter {
     } catch (error) {
       console.error("error:", error);
       this.#view.populateSummaryListError(error.message);
+    } finally {
+      this.#view.hideLoading();
     }
   }
 
   async deleteButtonHandler(id) {
+    this.#view.showLoading();
+
     try {
       const confirmed = confirm("Are you sure you want to delete this summary?");
       if (!confirmed) return;
@@ -39,6 +45,8 @@ export default class LibraryPresenter {
       await this.initialGallery();
     } catch (error) {
       console.error("error:", error);
+    } finally {
+      this.#view.hideLoading();
     }
   }
 }

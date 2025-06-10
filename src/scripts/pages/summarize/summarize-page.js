@@ -1,5 +1,6 @@
 import SummarizePresenter from "./summarize-presenter";
 import * as SummaryAPI from "../../data/api";
+import { generateLoaderTemplate } from "../../templates";
 
 export default class SummarizePage {
   #presenter = null;
@@ -82,7 +83,7 @@ export default class SummarizePage {
                   </div>
 
                   <div class="summarize-tool__button__right">
-                    <a href="#/library" id="view-button" class="view__button primary-btn">View in library</a>
+                    <a href="#/library" id="view-button" class="view__button primary-btn">Open Library</a>
                   </div>
                 </div>
               </form>
@@ -160,6 +161,7 @@ export default class SummarizePage {
           </div>
         </div>
 
+        <div id="loading-container"></div>
         <div class="faq-bg"></div>
       </section>
     `;
@@ -271,7 +273,6 @@ export default class SummarizePage {
   }
 
   createSuccessfully(message) {
-    alert(message);
     console.log(message);
     this.clearForm();
   }
@@ -290,5 +291,14 @@ export default class SummarizePage {
     textInput.placeholder =
       "Upload a PDF file or directly write or paste your text in this section. Whenever you’re ready, just click “Summarize”. Your summary will come out within a minute!";
     filePreview.hidden = true;
+  }
+
+  showLoading() {
+    document.getElementById("loading-container").innerHTML =
+      generateLoaderTemplate();
+  }
+
+  hideLoading() {
+    document.getElementById("loading-container").innerHTML = "";
   }
 }
