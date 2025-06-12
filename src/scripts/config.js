@@ -1,5 +1,4 @@
-const CONFIG = {
-  BASE_URL: 'API_BASE_URL',
-};
+export const BASE_URL = "https://quibly.up.railway.app";
 
-export default CONFIG;
+export const ACCESS_TOKEN_KEY = "accessToken";
+export const REFRESH_TOKEN_KEY = "refreshToken";
