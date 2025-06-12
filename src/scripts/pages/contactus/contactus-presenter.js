@@ -24,7 +24,9 @@ export default class ContactUsPresenter {
         return;
       }
 
-      this.#view.showSuccess(`Thanks, ${formData.name}! Your message has been submitted.`);
+      this.#view.showSuccess(
+        `Thanks, ${formData.name}! Your message has been submitted.`,
+      );
     } catch (error) {
       console.error("submitContactForm: error:", error);
       this.#view.showError(error.message);

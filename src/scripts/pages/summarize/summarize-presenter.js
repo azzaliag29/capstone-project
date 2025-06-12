@@ -28,7 +28,7 @@ export default class SummarizePresenter {
       }
 
       const { summary, keywords } = response.data;
-      
+
       this.#view.updateOutput(summary, keywords);
       this.#view.createSuccessfully(response.message);
     } catch (error) {

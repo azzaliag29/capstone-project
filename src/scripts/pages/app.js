@@ -1,7 +1,10 @@
 import routes from "../routes/routes";
 import { getActiveRoute } from "../routes/url-parser";
-import { generateAuthenticatedNavigationListTemplate, generateUnauthenticatedNavigationListTemplate  } from "../templates";
-import { transitionHelper } from '../utils';
+import {
+  generateAuthenticatedNavigationListTemplate,
+  generateUnauthenticatedNavigationListTemplate,
+} from "../templates";
+import { transitionHelper } from "../utils";
 import { getAccessToken, getLogout } from "../utils/auth";
 
 class App {
@@ -27,7 +30,7 @@ class App {
 
     document.body.addEventListener("click", (event) => {
       const isTargetInsideDrawer = this.#drawerNavigation.contains(
-        event.target
+        event.target,
       );
       const isTargetInsideButton = this.#drawerButton.contains(event.target);
 
@@ -104,7 +107,7 @@ class App {
     transition.ready.catch(console.error);
     transition.updateCallbackDone.then(() => {
       requestAnimationFrame(() => {
-        scrollTo({ top: 0, behavior: 'instant' });
+        scrollTo({ top: 0, behavior: "instant" });
         this.#setupNavigation();
         this.#setupDrawer();
       });

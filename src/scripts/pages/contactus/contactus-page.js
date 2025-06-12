@@ -45,7 +45,7 @@ export default class ContactUsPage {
       view: this,
       model: SummaryAPI,
     });
-  
+
     this.#setupForm();
   }
 
@@ -59,10 +59,10 @@ export default class ContactUsPage {
           name: this.#form.name.value,
           email: this.#form.email.value,
           message: this.#form.message.value,
-        }
+        };
 
         await this.#presenter.submitContactForm(data);
-      })
+      });
     }
   }
 
@@ -76,11 +76,11 @@ export default class ContactUsPage {
   }
 
   showLoading() {
-      document.getElementById("loading-container").innerHTML =
-        generateLoaderTemplate();
-    }
-  
-    hideLoading() {
-      document.getElementById("loading-container").innerHTML = "";
-    }
+    document.getElementById("loading-container").innerHTML =
+      generateLoaderTemplate();
+  }
+
+  hideLoading() {
+    document.getElementById("loading-container").innerHTML = "";
+  }
 }

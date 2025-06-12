@@ -1,6 +1,9 @@
 import SummaryPresenter from "./summary-presenter";
 import * as SummaryAPI from "../../data/api";
-import { generateLoaderTemplate, generateSummaryDetailTemplate } from "../../templates";
+import {
+  generateLoaderTemplate,
+  generateSummaryDetailTemplate,
+} from "../../templates";
 import { parseActivePathname } from "../../routes/url-parser";
 
 export default class SummaryPage {
@@ -39,7 +42,7 @@ export default class SummaryPage {
       view: this,
       model: SummaryAPI,
     });
-    
+
     this.#presenter.getSummaryById();
   }
 
@@ -50,7 +53,7 @@ export default class SummaryPage {
         summary,
         keywords,
       });
-    
+
     this.populateKeywords(keywords);
     this.#setupForm();
   }
@@ -70,7 +73,7 @@ export default class SummaryPage {
     });
 
     downloadButton.addEventListener("click", () => {
-      const blob = new Blob([textArea.value], {type: "text/plain"});
+      const blob = new Blob([textArea.value], { type: "text/plain" });
       const url = URL.createObjectURL(blob);
       downloadButton.href = url;
     });
@@ -87,7 +90,8 @@ export default class SummaryPage {
       } else {
         summaryTitle.contentEditable = "false";
         textArea.setAttribute("readonly", true);
-        summaryEditButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>Edit';
+        summaryEditButton.innerHTML =
+          '<i class="fa-solid fa-pen-to-square"></i>Edit';
 
         const data = {
           title: summaryTitle.textContent,
@@ -99,7 +103,9 @@ export default class SummaryPage {
     });
 
     deleteButton.addEventListener("click", async () => {
-      const confirmed = confirm("Are you sure you want to delete this summary?");
+      const confirmed = confirm(
+        "Are you sure you want to delete this summary?",
+      );
       if (!confirmed) return;
 
       await this.#presenter.deleteSummaryById();
@@ -137,7 +143,7 @@ export default class SummaryPage {
     document.getElementById("loading-container").innerHTML =
       generateLoaderTemplate();
   }
-    
+
   hideLoading() {
     document.getElementById("loading-container").innerHTML = "";
   }

@@ -32,11 +32,13 @@ export default class LibraryPresenter {
     this.#view.showLoading();
 
     try {
-      const confirmed = confirm("Are you sure you want to delete this summary?");
+      const confirmed = confirm(
+        "Are you sure you want to delete this summary?",
+      );
       if (!confirmed) return;
-      
+
       const response = await this.#model.deleteSummaryById(id);
-    
+
       if (!response.ok) {
         console.error("response:", response);
         return;

@@ -1,13 +1,12 @@
 import { showFormattedDate } from "./utils";
 
-
 export function generateLoaderTemplate() {
   return `
     <div class="loader">
       <div class="loader-spinner" aria-hidden="true"></div>
       <p class="loader-text">Loading, please wait...</p>
     </div>
-  `
+  `;
 }
 
 export function generateAuthenticatedNavigationListTemplate() {
@@ -52,12 +51,7 @@ export function generateUnauthenticatedNavigationListTemplate() {
   `;
 }
 
-export function generateSummaryItemTemplate({
-  id,
-  title,
-  summary,
-  savedAt,
-}) {
+export function generateSummaryItemTemplate({ id, title, summary, savedAt }) {
   return `
       <div tabindex="0" class="library-item" data-libraryid="${id}">
         <div class="library-item__illustration">
@@ -75,7 +69,7 @@ export function generateSummaryItemTemplate({
           <div class="library-item__footer">
             <p class="library-item__date">Saved at
               <span>
-                ${showFormattedDate(savedAt,"id-ID")}
+                ${showFormattedDate(savedAt, "id-ID")}
               </span>
             </p>
             <div class="library-item__buttons">
@@ -114,11 +108,7 @@ export function generateSummaryListErrorTemplate(message) {
     `;
 }
 
-export function generateSummaryDetailTemplate({
-  title,
-  summary,
-  keywords,
-}) {
+export function generateSummaryDetailTemplate({ title, summary, keywords }) {
   return `
     <div class="section-header">
       <h1 class="section-title" form="summary-form" aria-label="Enter summary title">${title}</h1>
@@ -158,5 +148,5 @@ export function generateSummaryDetailTemplate({
         </form>
       </div>
     </div>
-  `
+  `;
 }

@@ -75,7 +75,7 @@ export function removeRefreshToken() {
 export function isTokenExpired(token) {
   if (!token) return true;
 
-  const payload = JSON.parse(atob(token.split('.')[1]));
+  const payload = JSON.parse(atob(token.split(".")[1]));
   const exp = payload.exp;
   const now = Math.floor(Date.now() / 1000);
 
@@ -106,7 +106,7 @@ export function checkAuthenticatedRouteOnly(page) {
 
   if (authenticatedRoutesOnly.includes(url)) {
     if (!(isLogin && isTokenAvailable)) {
-      alert("Please log in to continue.")
+      alert("Please log in to continue.");
       location.hash = "/login";
       return null;
     }

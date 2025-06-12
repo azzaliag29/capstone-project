@@ -8,7 +8,10 @@ import SummarizePage from "../pages/summarize/summarize-page";
 import LibraryPage from "../pages/library/library-page";
 import PrivacyPage from "../pages/privacy/privacy-page";
 import TermsPage from "../pages/terms/terms-page";
-import { checkAuthenticatedRouteOnly, checkUnauthenticatedRouteOnly } from "../utils/auth";
+import {
+  checkAuthenticatedRouteOnly,
+  checkUnauthenticatedRouteOnly,
+} from "../utils/auth";
 
 const routes = {
   "/": () => new HomePage(),

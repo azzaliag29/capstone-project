@@ -1,7 +1,6 @@
 import RegisterPresenter from "./register-presenter";
 import * as SummaryAPI from "../../../data/api";
 
-
 export default class RegisterPage {
   #presenter = null;
 

@@ -1,4 +1,10 @@
-import { getAccessToken, getRefreshToken, putAccessToken, removeAccessToken, removeRefreshToken } from "../utils/auth";
+import {
+  getAccessToken,
+  getRefreshToken,
+  putAccessToken,
+  removeAccessToken,
+  removeRefreshToken,
+} from "../utils/auth";
 import { BASE_URL } from "../config";
 
 const ENDPOINTS = {
@@ -90,23 +96,22 @@ async function fetchWithAuth(url, options = {}) {
     if (!refreshToken) {
       removeAccessToken();
       removeRefreshToken();
-      alert('Sesi Anda telah berakhir. Silakan login kembali.');
-      location.hash = '/login';
+      alert("Sesi Anda telah berakhir. Silakan login kembali.");
+      location.hash = "/login";
       return null;
     }
 
     const res = await updateAccessToken({ refreshToken });
     if (res.ok && res.data?.accessToken) {
-  
       putAccessToken(res.data.accessToken);
-  
+
       options.headers.Authorization = `Bearer ${res.data.accessToken}`;
       response = await fetch(url, options);
     } else {
       removeAccessToken();
       removeRefreshToken();
-      alert('Sesi Anda telah berakhir. Silakan login kembali.');
-      location.hash = '/login';
+      alert("Sesi Anda telah berakhir. Silakan login kembali.");
+      location.hash = "/login";
       return null;
     }
   }
@@ -151,7 +156,6 @@ export async function deleteSummaryById(id) {
     method: "DELETE",
   });
 }
-
 
 export async function sendMessage({ name, email, message }) {
   const data = JSON.stringify({ name, email, message });

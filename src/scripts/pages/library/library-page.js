@@ -31,11 +31,11 @@ export default class LibraryPage {
       view: this,
       model: SummaryAPI,
     });
-    
+
     await this.#presenter.initialGallery();
   }
 
-  populateSummaryList (message, summaryList) {
+  populateSummaryList(message, summaryList) {
     if (summaryList.length <= 0) {
       this.populateSummaryListEmpty();
       return;
@@ -44,9 +44,9 @@ export default class LibraryPage {
     const html = summaryList.reduce((accumulator, summary) => {
       return accumulator.concat(
         generateSummaryItemTemplate({
-          ...summary
-        })
-      )
+          ...summary,
+        }),
+      );
     }, "");
 
     document.getElementById("library-list").innerHTML = `
@@ -69,20 +69,20 @@ export default class LibraryPage {
   deleteButtonListeners() {
     const deleteButtons = document.querySelectorAll(".delete-button");
 
-    deleteButtons.forEach(button => {
-      button.addEventListener('click', (event) => {
+    deleteButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
         const libraryItem = event.target.closest(".library-item");
         const libraryItemId = libraryItem.getAttribute("data-libraryid");
         this.#presenter.deleteButtonHandler(libraryItemId);
-      })
-    })
+      });
+    });
   }
 
   showLoading() {
     document.getElementById("loading-container").innerHTML =
       generateLoaderTemplate();
-    }
-  
+  }
+
   hideLoading() {
     document.getElementById("loading-container").innerHTML = "";
   }

@@ -248,7 +248,7 @@ export default class SummarizePage {
     });
 
     downloadButton.addEventListener("click", () => {
-      const blob = new Blob([outputTextArea.value], {type: "text/plain"});
+      const blob = new Blob([outputTextArea.value], { type: "text/plain" });
       const url = URL.createObjectURL(blob);
       downloadButton.href = url;
     });
@@ -285,7 +285,7 @@ export default class SummarizePage {
 
     const textInput = this.#form.elements.namedItem("text-input");
     const filePreview = document.getElementById("file-preview");
-    
+
     textInput.disabled = false;
     textInput.placeholder =
       "Upload a PDF file or directly write or paste your text in this section. Whenever you’re ready, just click “Summarize”. Your summary will come out within a minute!";

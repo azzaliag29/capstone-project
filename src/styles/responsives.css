@@ -11,7 +11,8 @@
     padding: 15px 60px;
   }
 
-  .global-container, .tutorial-container {
+  .global-container,
+  .tutorial-container {
     padding: 80px 60px 0px 60px;
   }
 
@@ -41,7 +42,9 @@
     background-color: var(--blue-darkest);
     transform: translateY(-100%);
     opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
     z-index: -999;
     min-height: 100vh;
   }
@@ -85,7 +88,8 @@
     flex-direction: column;
   }
 
-  .tut-left-col, .tut-right-col {
+  .tut-left-col,
+  .tut-right-col {
     width: 100%;
   }
 
@@ -134,7 +138,7 @@
   .navbar {
     padding: 15px 30px;
   }
-  
+
   .navbar-links {
     padding: 120px 30px;
   }
@@ -219,7 +223,7 @@
 
   footer.footer {
     margin-inline: 30px;
-    margin-top: 80px; 
+    margin-top: 80px;
   }
 }
 
@@ -232,7 +236,8 @@
     font-size: 1rem;
   }
 
-  .section-title, .about-text h2 {
+  .section-title,
+  .about-text h2 {
     font-size: 2rem;
   }
 
@@ -298,8 +303,7 @@
     font-size: 1.5rem;
   }
 
-
-  .summary__button__right .delete__button ,
+  .summary__button__right .delete__button,
   .edit__button {
     font-size: 0;
     line-height: 0;
@@ -315,7 +319,8 @@
     margin-right: 0;
   }
 
-  .summary__button__right .delete__button, .edit__button {
+  .summary__button__right .delete__button,
+  .edit__button {
     border-radius: 999px;
     padding: 15px 17px;
     min-width: 0px;
@@ -354,9 +359,9 @@
   }
 
   .loader-text {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
   }
-  
+
   .loader-spinner {
     width: 42px;
     height: 42px;
@@ -385,7 +390,8 @@
     padding: 120px 25px;
   }
 
-  .global-container, .tutorial-container {
+  .global-container,
+  .tutorial-container {
     padding: 80px 25px 0px 25px;
   }
 
@@ -425,7 +431,8 @@
     font-size: 1.5rem;
   }
 
-  .summarize-form textarea, .summary-form textarea {
+  .summarize-form textarea,
+  .summary-form textarea {
     height: 200px;
   }
 
@@ -467,7 +474,7 @@
   }
 
   .footer-section.brand .copyright {
-    margin-top: 20px; 
+    margin-top: 20px;
     font-size: 12px;
   }
 }

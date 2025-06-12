@@ -23,7 +23,7 @@ export default class SummaryPresenter {
       }
 
       const { title, summary, keywords } = response.data.summary;
-      
+
       // Display the fetched summary on the view
       this.#view.displaySummary(title, summary, keywords);
     } catch (error) {
