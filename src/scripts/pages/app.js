@@ -1,6 +1,7 @@
 import routes from "../routes/routes";
 import { getActiveRoute } from "../routes/url-parser";
 import { generateAuthenticatedNavigationListTemplate, generateUnauthenticatedNavigationListTemplate  } from "../templates";
+import { transitionHelper } from '../utils';
 import { getAccessToken, getLogout } from "../utils/auth";
 
 class App {
@@ -93,13 +94,21 @@ class App {
     const route = routes[url];
 
     const page = route();
-    if (!page) return;
 
-    this.#content.innerHTML = await page.render();
-    await page.afterRender();
-
-    this.#setupNavigation();
-    this.#setupDrawer();
+    const transition = transitionHelper({
+      updateDOM: async () => {
+        this.#content.innerHTML = await page.render();
+        await page.afterRender();
+      },
+    });
+    transition.ready.catch(console.error);
+    transition.updateCallbackDone.then(() => {
+      requestAnimationFrame(() => {
+        scrollTo({ top: 0, behavior: 'instant' });
+        this.#setupNavigation();
+        this.#setupDrawer();
+      });
+    });
   }
 }
 

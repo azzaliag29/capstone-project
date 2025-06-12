@@ -121,7 +121,7 @@ export function generateSummaryDetailTemplate({
 }) {
   return `
     <div class="section-header">
-      <h1 class="section-title" form="summary-form" role="textbox">${title}</h1>
+      <h1 class="section-title" form="summary-form" aria-label="Enter summary title">${title}</h1>
     </div>
 
     <div class="summary-col">

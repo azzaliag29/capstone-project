@@ -1,14 +1,14 @@
 export default class AboutPage {
   async render() {
     return `
-      <section class="about-page global-container">
-        <div class="about-content">
+      <section class="aboutus-page global-container">
+        <div class="aboutus-content">
           <h1>What is Quibly?</h1>
           <p>Quibly is a web-based platform that simplifies long documents by generating concise summaries. it also extracts key keywords,
           helping users quickly grasp essentials information. These keywords are linked to Google Scholar for further researxch, making Quibly an ideal tool for students, researcher,and anyone looking to read more efficienty.</p>
         </div>
 
-        <div class="about-content">
+        <div class="aboutus-content">
           <h2>Our Mission</h2>
           <p>At Quibly, our mission is to empower users to read smarter and faster. We aim to simplify complex documents, providing concise summaries and key insights to enhance understanding. By combining advanced text processing with easy access to further research, we help students, researchers, and professionals stay informed and efficient in their reading journey.</p>
         </div>

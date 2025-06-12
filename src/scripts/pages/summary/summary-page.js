@@ -27,6 +27,9 @@ export default class SummaryPage {
             </div>
           </div>
         </div>
+
+        <div class="summary-right-orbs"></div>
+        <div class="summary-left-orbs"></div>
       </section>
     `;
   }

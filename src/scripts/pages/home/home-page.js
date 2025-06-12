@@ -1,103 +1,112 @@
 export default class HomePage {
   async render() {
     return `
-      <section class="home-page global-container">
-        <div class="about-section-container">
+      <section class="jumbotron-container">
+        <div class="jumbotron-wrapper">
+          <div class="jumbotron-content">
+            <div class="jumbotron-text">
+              <h1>Summarize Long Text In a <span><i>Flash</i><i class="fa-solid fa-bolt"></i></span></h1>
+              <p>Powered by AI, Quibly helps you turn long content into a brief summary. Whether you're working on an essay, blog, or research article, our tool is ready to assist you.</p>
+              <a href="#/summarize" class="primary-btn">Try Quibly Now</a> 
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="about-container">
+        <div class="about-content">
           <div class="about-text">
-            <h1 class="about-text__title">Summarize Long Text</h1>
-            <h2 class="flash"> In a <strong>flash</strong></h2>
-
-            <p class="subtext">
-              With Quibly, you can easily turn long content into a brief summary.
-              Whether you're working on an essay, blog, or research article, our tool is ready to assist you.
+            <h2>What is Quibly?</h2>
+            <p>Quibly is a web-based platform designed to help users understand long documents more efficiently. 
+              By using intelligent text processing technology, Quibly allows you to transform text or documents 
+              into shorter, more concise, and easier-to-understand summaries, while also automatically extracting 
+              important keywords to help you discover relevant topics.
             </p>
           </div>
+          <a href="#/about" class="primary-btn">Read More</a> 
+        </div>
+      </section>
 
-          <img src="images/iconic-quibly.png" alt="Quibly App Icon" class="about-image-img">
+      <section class="tutorial-container">
+        <div class="section-header">
+          <h2 class="section-title">How Our AI Summarizer Work</h2>
         </div>
 
-        <br />
-        <h2 class="what-title">What is Quibly?</h2>
-        <p>
-          Quibly is a web-based platform designed to help users understand long documents more efficiently.
-          By using intelligent text processing technology, Quibly allows you to transform text or documents into shorter,
-          more concise,
-          and easier-to-understand summaries.
-        </p>
-        <br />
-        <p>In addition to summarizing, Quibly also automatically extracts important keywords from the
-          content of the document. These keywords not only help in understanding the core of the reading but can also be
-          used to explore
-          further references directly on Google Scholar — making it very suitable for students, researchers, or anyone who
-          wants to read
-          more critically and quickly.
-        </p>
-
-        <br />
-        <div class="wrapper">
-          <div class="v111">Text Summarize</div>
-          <div class="v112">Custom Summaries</div>
-        </div>
-        <br />
-
-
-        <h1 class="how">How Our AI Summarizer Works</h1>
-        <br />
-        <div class="step-container">
-          <div class="step">
-            <p class="v113">1. Input your text</p>
-            <p class="v114">Upload a PDF file or directly write or paste your text in this section to start summarizing.</p>
-
-            <div class="row">
-              <p class="v115">Upload PDF</p>
-              <p class="v116">Summarize</p>
+        <div class="tutorial-content">
+          <div class="tut-left-col">
+            <div class="tut-top">
+              <h3>1. Input your text</h3>
+              <p>Upload a PDF file or directly write or paste your text in this section to start summarizing.</p>
+            </div>
+            <div class="tut-buttons">
+              <div class="tut-buttons-left">
+                <p><i class="fa-solid fa-arrow-up-from-bracket"></i></p>
+              </div>
+              <div class="tut-buttons-right">
+                <p class="primary-btn">Summarize</p>
+              </div>
             </div>
           </div>
 
-
-          <div class="step">
-            <p class="v117">2. Get AI - Generated Summary</p>
-            <p class="v118">Accurate summary of keyword</p>
-
-            <div class="flow">
-              <p class="v119">Download</p>
-              <p class="v120">Copy</p>
-              <p class="v121">Save to Library</p>
+          <div class="tut-right-col">
+            <div class="tut-top">
+              <h3>2. Get your summary</h3>
+              <p>Once you click the button, your summary and keywords will appear instantly.</p>
+            </div>
+            <div class="tut-buttons">
+              <div class="tut-buttons-left">
+                <p><i class="fa-solid fa-download"></i></p>
+                <p><i class="fa-solid fa-copy"></i></p>
+              </div>
+              <div class="tut-buttons-right">
+                <p class="primary-btn">Open Library</p>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
+      <section class="testimonial-container global-container">
+        <div class="testimonial-content">
+          <div class="section-header">
+            <h2 class="section-title">What They Say About Us</h2>
+          </div>
 
-        <div class="try-now-section">
-          <button class="v122">Try FREE Now!</button>
+          <div class="container text-center">
+            <div class="row align-items-start gy-5">
+              <div class="col">
+                <div class="card custom-card mx-auto">
+                  <div class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                    <img src="images/pfp1.jpg" class="img-thumbnail profile-img mb-3" alt="...">
+                    <h3 class="card-title text-white fs-4">Kevin Rinaldi</h3>
+                    <p class="card-text fs-6 text-white">“The summaries are clear and the related paper search is spot on.”</p>
+                    <img src="images/rating-image.webp" class="img-fluid rating-img" alt="...">
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card custom-card mx-auto">
+                  <div class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                    <img src="images/pfp2.jpg" class="img-thumbnail profile-img mb-3" alt="..."> 
+                    <h3 class="card-title text-white fs-4">Sarah Lim</h3>
+                    <p class="card-text fs-6 text-white">“Love how easy it is to get key ideas from complex academic texts!”</p>
+                    <img src="images/rating-image.webp" class="img-fluid rating-img" alt="...">
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card custom-card mx-auto">
+                  <div class="card-body card-body d-flex flex-column align-items-center justify-content-center text-center">
+                    <img src="images/pfp3.jpg" class="img-thumbnail profile-img mb-3" alt="...">
+                    <h3 class="card-title fs-4 text-white">Dina Marquez</h3>
+                    <p class="card-text fs-6 text-white">“Quibly helps me understand so much faster. It’s a must-have for students!”</p>
+                    <img src="images/rating-image.webp" class="img-fluid rating-img" alt="Star rating">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <br />
-        <div class="testimoni">
-          <div class="testimonials">
-            <h2 class="v123">What they say about us</h2>
-          </div>
-
-          <div class="feedback-container">
-            <div class="feedback">
-              <p class="v124">From concept to execution, they made it so easy</p>
-              <div class="v125"></div>
-              <p class="v126">Baymax Petter</p>
-            </div>
-
-            <div class="feedback">
-              <p class="v127">I am very helped by the existence of Quibly.</p>
-              <div class="v128"></div>
-              <p class="v129">Vicky</p>
-            </div>
-
-            <div class="feedback">
-              <p class="v130">This website saves me time in summarizing documents</p>
-              <div class="v131"></div>
-              <p class="v132">Felix</p>
-            </div>
-          </div>
       </section>
     `;
   }

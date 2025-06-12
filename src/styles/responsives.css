@@ -1,9 +1,17 @@
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
 @media screen and (max-width: 1045px) {
   .navbar {
     padding: 15px 60px;
   }
 
-  .global-container {
+  .global-container, .tutorial-container {
     padding: 80px 60px 0px 60px;
   }
 
@@ -51,6 +59,34 @@
   .navbar-right-links {
     flex-direction: column;
     gap: 30px;
+  }
+
+  .about-content {
+    padding-inline: 200px;
+  }
+
+  .jumbotron-content {
+    width: 80%;
+  }
+
+  .jumbotron-text {
+    padding: 0;
+  }
+
+  .jumbotron-text h1 {
+    font-size: 3rem;
+  }
+
+  .jumbotron-text p {
+    font-size: 1rem;
+  }
+
+  .tutorial-content {
+    flex-direction: column;
+  }
+
+  .tut-left-col, .tut-right-col {
+    width: 100%;
   }
 
   .auth-container {
@@ -107,6 +143,10 @@
     padding: 80px 30px 0px 30px;
   }
 
+  .about-content {
+    padding-inline: 50px;
+  }
+
   .auth-container {
     grid-template-columns: 1fr;
   }
@@ -135,6 +175,17 @@
   .about-page .about-content,
   .about-page .simplify-text-container {
     padding: 20px;
+  }
+
+  .summary-left-orbs {
+    display: none;
+    width: 200px;
+    height: 200px;
+  }
+
+  .summary-right-orbs {
+    width: 400px;
+    height: 400px;
   }
 
   .simplify-text-container {
@@ -181,8 +232,16 @@
     font-size: 1rem;
   }
 
-  .section-title {
-    font-size: 1.8rem;
+  .section-title, .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .jumbotron-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-container {
+    height: 600px;
   }
 
   .summarize-form #file-preview img {
@@ -282,6 +341,18 @@
     height: 0;
   }
 
+  .summary-left-orbs {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .summary-right-orbs {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
   .loader-text {
     font-size: 1.2rem; 
   }
@@ -314,8 +385,12 @@
     padding: 120px 25px;
   }
 
-  .global-container {
+  .global-container, .tutorial-container {
     padding: 80px 25px 0px 25px;
+  }
+
+  .submit-button-container button {
+    padding: 12px 20px;
   }
 
   .cta-container {
@@ -330,6 +405,15 @@
     margin-block: 30px;
     max-width: 1300px;
     color: var(--primary-text-color);
+  }
+
+  .custom-card {
+    width: 300px !important;
+  }
+
+  .jumbotron-text {
+    align-items: center;
+    text-align: center;
   }
 
   .summarize-btn {
