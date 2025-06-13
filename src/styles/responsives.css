@@ -11,8 +11,7 @@
     padding: 15px 60px;
   }
 
-  .global-container,
-  .tutorial-container {
+  .global-container {
     padding: 80px 60px 0px 60px;
   }
 
@@ -77,20 +76,20 @@
   }
 
   .jumbotron-text h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 
-  .jumbotron-text p {
-    font-size: 1rem;
-  }
-
-  .tutorial-content {
-    flex-direction: column;
+  .jumbotron-wrapper::before {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .tut-left-col,
   .tut-right-col {
     width: 100%;
+  }
+
+  .tutorial-wrapper {
+    width: 80%;
   }
 
   .auth-container {
@@ -151,6 +150,11 @@
     padding-inline: 50px;
   }
 
+  .tutorial-content {
+    flex-direction: column;
+    gap: 25px;
+  }
+
   .auth-container {
     grid-template-columns: 1fr;
   }
@@ -163,8 +167,8 @@
     padding: 20px;
   }
 
-  .summarize-tool-container {
-    margin-bottom: 60px;
+  .tutorial-bg {
+    height: 30vh;
   }
 
   .accordion-button {
@@ -175,10 +179,8 @@
     font-size: 0.9rem;
   }
 
-  .about-page .about-header,
-  .about-page .about-content,
-  .about-page .simplify-text-container {
-    padding: 20px;
+  .aboutus-page .aboutus-content {
+    padding: 50px 30px;
   }
 
   .summary-left-orbs {
@@ -233,7 +235,7 @@
   }
 
   .section-header p {
-    font-size: 1rem;
+    margin: 0;
   }
 
   .section-title,
@@ -241,12 +243,37 @@
     font-size: 2rem;
   }
 
+  .aboutus-page .aboutus-content h1,
+  .aboutus-page .aboutus-content h2 {
+    font-size: 2rem;
+  }
+
   .jumbotron-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   .about-container {
     height: 600px;
+  }
+
+  .tut-top {
+    height: 200px;
+  }
+
+  .tutorial-wrapper {
+    width: 85%;
+  }
+
+  .testimonial-wrapper {
+    width: 90%;
+  }
+
+  .row.gx-5 {
+    --bs-gutter-x: 0;
+  }
+
+  .custom-card {
+    width: 300px !important;
   }
 
   .summarize-form #file-preview img {
@@ -346,6 +373,12 @@
     height: 0;
   }
 
+  .tutorial-bg {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
   .summary-left-orbs {
     display: none;
     width: 0;
@@ -390,9 +423,17 @@
     padding: 120px 25px;
   }
 
-  .global-container,
-  .tutorial-container {
+  .global-container {
     padding: 80px 25px 0px 25px;
+  }
+
+  .tutorial-container {
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .summarize-tool-container {
+    margin-bottom: 80px;
   }
 
   .submit-button-container button {
@@ -408,13 +449,13 @@
     flex-direction: column;
     gap: 20px;
     text-align: center;
-    margin-block: 30px;
+    margin-block: 50px;
     max-width: 1300px;
     color: var(--primary-text-color);
   }
 
-  .custom-card {
-    width: 300px !important;
+  .aboutus-page .aboutus-content {
+    padding: 40px 30px;
   }
 
   .jumbotron-text {
@@ -423,7 +464,7 @@
   }
 
   .summarize-btn {
-    font-size: 0px;
+    font-size: 0px !important;
     line-height: 0;
   }
 
@@ -437,7 +478,7 @@
   }
 
   .summarize-form #file-preview {
-    height: 185px;
+    height: 205px;
   }
 
   .summarize-form #file-preview img {

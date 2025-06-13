@@ -11,7 +11,7 @@ export function generateLoaderTemplate() {
 
 export function generateAuthenticatedNavigationListTemplate() {
   return `
-    <div class="navbar-logo"><strong>Quibly</strong></div>
+    <a href="/" class="navbar-logo"><strong>Quibly</strong></a>
 
     <div class="navbar-links">
       <ul class="navbar-center-links">

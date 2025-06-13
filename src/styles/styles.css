@@ -9,6 +9,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.main-content {
+  min-height: 100vh;
+}
+
 :root {
   --blue-darkest: #0d1e4a;
   --blue-dark: #072983;
@@ -74,6 +78,7 @@ body {
   text-align: center;
   margin-block: 50px;
   max-width: 1300px;
+  padding-inline: 1rem;
   color: var(--primary-text-color);
 }
 
@@ -113,6 +118,8 @@ body {
   font-size: 30px;
   font-weight: bold;
   flex-shrink: 0;
+  text-decoration: none;
+  color: var(--primary-text-color);
 }
 
 .navbar-links {
@@ -218,7 +225,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url("/dist/images/jumbotron-img.jpg");
+  background-image: url("/dist/images/jumbotron-img.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -229,7 +236,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.1);
   z-index: 0;
 }
 
@@ -287,7 +294,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 420px;
 }
 
 .about-content {
@@ -324,7 +331,18 @@ body {
 }
 
 .tutorial-container {
-  padding: 80px 160px 0px 160px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.tutorial-wrapper {
+  width: 70%;
 }
 
 .tutorial-content {
@@ -351,7 +369,7 @@ body {
 }
 
 .tut-top {
-  margin-bottom: 140px;
+  height: 250px;
 }
 
 .tut-buttons {
@@ -375,6 +393,29 @@ body {
 
 .tut-buttons-left p {
   font-size: 1rem;
+}
+
+.tutorial-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  background-image: url("/dist/images/light-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  z-index: -999;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 100px;
 }
 
 .custom-card {
@@ -842,10 +883,6 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   align-items: center;
 }
 
-.library-item__footer span {
-  color: var(--purple-lightest);
-}
-
 .library-item__buttons {
   display: flex;
   gap: 20px;
@@ -1008,12 +1045,13 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   align-items: center;
   text-align: center;
   background-color: var(--blue-darkest);
+  margin-bottom: 20px;
 }
 
 .aboutus-page .aboutus-content {
   background-color: #bdcfff;
-  padding: 50px 30px;
-  margin: 20px 0;
+  padding: 65px 100px;
+  margin-top: 30px;
   border-radius: 15px;
   width: 100%;
 }
@@ -1049,7 +1087,6 @@ i[class="fa-solid fa-arrow-up-from-bracket"] {
   text-align: left;
   background: linear-gradient(to right, #614bc6, #092672);
   padding: 40px;
-  margin: 20px 0;
   border-radius: 15px;
   width: 100%;
 }
@@ -1257,6 +1294,7 @@ a.summary-btn {
 /* BOOTSTRAP OVERRIDE */
 .accordion-button,
 .accordion-body {
+  line-height: 1.5rem;
   background-color: transparent !important;
   outline: none !important;
   color: var(--primary-text-color) !important;
